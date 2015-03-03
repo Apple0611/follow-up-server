@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Disease Categories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Parent</th>
+      <th>Level</th>
+      <th>Is active</th>
+      <th>Is empty</th>
+      <th>Is bottom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @disease_categories.each do |disease_category| %>
+      <tr>
+        <td><%= disease_category.name %></td>
+        <td><%= disease_category.description %></td>
+        <td><%= disease_category.parent %></td>
+        <td><%= disease_category.level %></td>
+        <td><%= disease_category.is_active %></td>
+        <td><%= disease_category.is_empty %></td>
+        <td><%= disease_category.is_bottom %></td>
+        <td><%= link_to 'Show', disease_category %></td>
+        <td><%= link_to 'Edit', edit_disease_category_path(disease_category) %></td>
+        <td><%= link_to 'Destroy', disease_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Disease category', new_disease_category_path %>
