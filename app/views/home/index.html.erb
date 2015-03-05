@@ -1,0 +1,268 @@
+<div class="top-banner">
+  <div class="ui page grid">
+    <div class="sixteen wide column">
+      <div class="ui secondary menu">
+        <a class="active item">
+          <i class="home icon"></i> <%= t('home') %>
+        </a>
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="<%= t('search') %> ...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <div class="right menu">
+          <a class="item">
+            <i class="mail icon"></i> <%= t('message') %>
+            <div class="floating ui teal circular label">5</div>
+          </a>
+          <a class="item">
+            <i class="user icon"></i> <%= t('personal') %>
+          </a>
+          <a class="ui item">
+            <i class="log out icon"></i> <%= t('logout') %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="top-steps wrap">
+  <div class="ui page grid">
+    <div class="sixteen wide column">
+      <div class="ui four column grid">
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <%= image_tag "img/search-disease-1.png" %>
+            </div>
+            <div class="content">
+              <a class="header"><%= t('search_disease') %></a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <%= image_tag "img/create-treatment-1.png" %>
+            </div>
+            <div class="content">
+              <a class="header"><%= t('create_treatment') %></a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <%= image_tag "img/create-follow-up.png" %>
+            </div>
+            <div class="content">
+              <a class="header"><%= t('create_follow-up') %></a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <%= image_tag "img/statistic-1.png" %>
+            </div>
+            <div class="content">
+              <a class="header"><%= t('statistics') %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="search-box wrap">
+  <div class="ui page grid">
+    <div class="sixteen wide column">
+        <div class="column">
+            <h3 class="ui header search-title">
+              <i class="search icon"></i>
+              <div class="content">
+                <%= t('search_in_database') %>
+              </div>
+            </h3>
+            <div class="ui fluid icon input">
+              <input type="text" placeholder="<%= t('search') %> ...">
+              <i class="search icon"></i>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="news-box wrap">
+  <div class="ui page grid">
+      <div class="ten wide column">
+        <div class="ui feed">
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/elliot.jpg">
+            </div>
+            <div class="content">
+              <div class="summary">
+                <a class="user">
+                  Elliot Fu
+                </a> added you as a friend
+                <div class="date">
+                  1 Hour Ago
+                </div>
+              </div>
+              <div class="meta">
+                <a class="like">
+                  <i class="like icon"></i> 4 Likes
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="label">
+              <i class="pencil icon"></i>
+            </div>
+            <div class="content">
+              <div class="summary">
+                You submitted a new post to the page
+                <div class="date">
+                  3 days ago
+                </div>
+              </div>
+              <div class="extra text">
+                I'm having a BBQ this weekend. Come by around 4pm if you can.
+              </div>
+              <div class="meta">
+                <a class="like">
+                  <i class="like icon"></i> 11 Likes
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/helen.jpg">
+            </div>
+            <div class="content">
+              <div class="date">
+                4 days ago
+              </div>
+              <div class="summary">
+                <a>Helen Troy</a> added <a>2 new illustrations</a>
+              </div>
+              <div class="extra images">
+                <a><img src="/images/wireframe/image.png"></a>
+                <a><img src="/images/wireframe/image.png"></a>
+              </div>
+              <div class="meta">
+                <a class="like">
+                  <i class="like icon"></i> 1 Like
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/jenny.jpg">
+            </div>
+            <div class="content">
+              <div class="summary">
+                <a class="user">
+                  Jenny Hess
+                </a> added you as a friend
+                <div class="date">
+                  2 Days Ago
+                </div>
+              </div>
+              <div class="meta">
+                <a class="like">
+                  <i class="like icon"></i> 8 Likes
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/joe.jpg">
+            </div>
+            <div class="content">
+              <div class="summary">
+                <a>Joe Henderson</a> posted on his page
+                <div class="date">
+                  3 days ago
+                </div>
+              </div>
+              <div class="extra text">
+                Ours is a life of constant reruns. We're always circling back to where we'd we started, then starting all over again. Even if we don't run extra laps that day, we surely will come back for more of the same another day soon.
+              </div>
+              <div class="meta">
+                <a class="like">
+                  <i class="like icon"></i> 5 Likes
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="label">
+              <img src="/images/avatar/small/justen.jpg">
+            </div>
+            <div class="content">
+              <div class="date">
+                4 days ago
+              </div>
+              <div class="summary">
+                <a>Justen Kitsune</a> added <a>2 new photos</a> of you
+              </div>
+              <div class="extra images">
+                <a><img src="/images/wireframe/image.png"></a>
+                <a><img src="/images/wireframe/image.png"></a>
+              </div>
+              <div class="meta">
+                <a class="like">
+                  <i class="like icon"></i> 41 Likes
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="six wide column">
+
+        <div class="ui info message">
+          <div class="header">Info Message</div>
+          <p>Example description</p>
+        </div>
+
+        <div class="ui segment">
+          <div class="ui top attached label">HTML</div>
+          <img class="ui wireframe image" src="/images/wireframe/paragraph.png">
+        </div>
+      </div>
+  </div>
+</div>
+
+<div class="ui horizontal divider">
+  <i class="first aid icon"></i>
+</div>
+
+<div class="footer-box wrap">
+  <div class="ui page grid">
+    <div class="sisteen wide column">
+      <div class="left floated column">
+        <div class="footer-left">
+          &copy; 2015 SCU-Apollo Team. All rights reserved.
+        </div>
+      </div>
+      <div class="right floated column">
+        <div class="footer-right">
+          <a href="#">Terms</a>
+          <a href="#">Privacy</a>
+          <a href="#">Contact</a>
+          <a href="#">About</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
