@@ -45,6 +45,25 @@ body {
   }
 }
 
+.news-box {
+  .segment {
+    margin-top: 20px !important;
+  }
+  .divided.list > .item:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .divided.list > .item {
+    margin-top: 10px;
+    padding-top: 10px;
+    .description {
+      padding-top: 4px;
+      color: #999;
+      font-size: 12px;
+    }
+  }
+}
+
 .footer-box {
   padding-bottom: 30px;
   .footer-left {
