@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :diseases
+
   root 'home#index'
   get 'home/index'
   resources :disease_categories
