@@ -14,7 +14,6 @@
 `is_active`     | boolean | 是否可用
 `is_empty`      | boolean | 是否为空
 `is_bottom`     | boolean | 是否为最底层
----
 
 ```bash
 rails g scaffold DiseaseCategory name:string description:text parent:integer level:integer is_active:boolean is_empty:boolean is_bottom:boolean
@@ -28,7 +27,6 @@ rails g scaffold DiseaseCategory name:string description:text parent:integer lev
 `name`          | string  | 疾病名称
 `summary`       | text    | 概况
 `overview`      | text    | 综述
----
 
 ```bash
 rails g scaffold Disease name:string summary:text overview:text
@@ -37,31 +35,35 @@ rails g scaffold Disease name:string summary:text overview:text
 ### `disease_attribute_schema` 疾病属性键值对
 
 属性名           | 类型     | 注释
---------------- | ------- | -----   
-`<disease_id>`  | ingeter | 疾病ID
+--------------- | ------- | -----
+`<disease_id>`  | integer | 疾病ID
 `key`           | string  | 键
-`value`         |         | 值
----
+`value`         | string  | 值
 
-disease_attribute_record   疾病属性具体值 <Join Table>
-<disease_id>
-<disease_attribute_schema_id>
-value
+### `disease_attribute_record` 疾病属性具体值 \<Join Table\>
 
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+`<disease_id>`  | integer |
+`<disease_attribute_schema_id>` | integer |
+`value`         | text    | 值
 
-disease_detail_schema   疾病详细键值对
-<disease_id>
-key
-type
-value
+### `disease_detail_schema` 疾病详细键值对
 
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+`<disease_id>`  | integer | 疾病ID
+`key`           | string  | 键
+`type`          | integer | 类型
+`value`         | string  | 值
 
-disease_detail_record   疾病详细具体值 <Join Table>
-<disease_id>
-<disease_detail_schema_id>
-value
+### `disease_detail_record` 疾病详细具体值 \<Join Table\>
 
-
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+`<disease_id>`  | integer |
+`<disease_detail_schema_id>`  | integer |
+`value`         | text    | 
 
 disease_reference   疾病参考文献
 <disease_id>
