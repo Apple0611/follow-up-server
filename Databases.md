@@ -3,6 +3,7 @@
 
 ## Server
 
+
 ### `disease_category` 疾病分类
 
 属性名           | 类型     | 注释
@@ -19,6 +20,8 @@
 rails g scaffold DiseaseCategory name:string description:text parent:integer level:integer is_active:boolean is_empty:boolean is_bottom:boolean
 ```
 
+--------------------------------------------------------------------------------
+
 ### `disease` 疾病基本
 
 属性名           | 类型     | 注释
@@ -32,6 +35,8 @@ rails g scaffold DiseaseCategory name:string description:text parent:integer lev
 rails g scaffold Disease name:string summary:text overview:text
 ```
 
+--------------------------------------------------------------------------------
+
 ### `disease_attribute_schema` 疾病属性键值对
 
 属性名           | 类型     | 注释
@@ -40,6 +45,8 @@ rails g scaffold Disease name:string summary:text overview:text
 `key`           | string  | 键
 `value`         | string  | 值
 
+--------------------------------------------------------------------------------
+
 ### `disease_attribute_record` 疾病属性具体值 \<Join Table\>
 
 属性名           | 类型     | 注释
@@ -47,6 +54,8 @@ rails g scaffold Disease name:string summary:text overview:text
 `<disease_id>`  | integer |
 `<disease_attribute_schema_id>` | integer |
 `value`         | text    | 值
+
+--------------------------------------------------------------------------------
 
 ### `disease_detail_schema` 疾病详细键值对
 
@@ -57,78 +66,122 @@ rails g scaffold Disease name:string summary:text overview:text
 `type`          | integer | 类型
 `value`         | string  | 值
 
+--------------------------------------------------------------------------------
+
 ### `disease_detail_record` 疾病详细具体值 \<Join Table\>
 
 属性名           | 类型     | 注释
 --------------- | ------- | -----
 `<disease_id>`  | integer |
 `<disease_detail_schema_id>`  | integer |
-`value`         | text    | 
+`value`         | text    |
 
-disease_reference   疾病参考文献
-<disease_id>
-author
-title
-link
-detail
+--------------------------------------------------------------------------------
 
+### `disease_reference` 疾病参考文献
 
-disease_history   疾病编辑历史
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<disease_id>    | integer |
+author          | string  |
+title           | string  |
+link            | string  |
+detail          | string  |
 
+--------------------------------------------------------------------------------
 
-treatment   治疗方案
-<disease_id>
-title
+### `disease_history` 疾病编辑历史
 
+--------------------------------------------------------------------------------
 
-treatment_doctor   医生参加治疗方案记录 <Join Table>
-<treatment_id>   方案ID
-<user_id>    医生ID
+### `treatment` 治疗方案
 
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<disease_id>    | integer | 疾病ID
+title           | string  | 标题
 
-treatment_patient   病人参加治疗方案记录 <Join Table>
-<treatment_id>   方案ID
-<user_id>    病人ID
+--------------------------------------------------------------------------------
 
+### `treatment_doctor` 治疗方案的医生 \<Join Table\>
 
-medicine   药物
-name
-name_en
-description
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<treatment_id>  | integer | 方案ID
+<user_id>       | integer | 医生ID
 
+--------------------------------------------------------------------------------
 
-pharmacy   用药方案
-<user_id>   医生ID
-description
+### `treatment_patient` 治疗方案的病人 \<Join Table\>
 
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<treatment_id>  | integer | 方案ID
+<user_id>       | integer | 病人ID
 
-pharmacy_medicine   用药方案药物 <Join Table>
-<pharmacy_id>
-<medicine_id>
-amount   用药量
-unit   用药单位
-repeat   重复用药次数
-repeat_type   重复类型（固定间隔、间隔递增、间隔递减、自定义间隔）
-interval   间隔时间（秒）
-interval_increment   间隔时间增量（秒）
+--------------------------------------------------------------------------------
 
+### `medicine` 药物
 
-pharmacy_medicine_interval   用药方案药物使用间隔
-<pharmacy_medicine_id>
-cycle   周期数
-interval   间隔
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+name            | string  | 名称
+name_en         | string  | 英文名
+description     | text    | 描述
 
+--------------------------------------------------------------------------------
 
-questionnaire   问卷
-title   题目
-description   描述
-tips   建议
-direction   指导
+### `pharmacy` 用药方案
 
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<user_id>       | integer | 医生ID
+description     | text    | 描述
 
-survey   随访调查  
-<questionnaire_id>
-<user_id>   医生ID
+--------------------------------------------------------------------------------
+
+### `pharmacy_medicine` 用药方案药物 \<Join Table\>
+
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<pharmacy_id>   | integer | 用药方案ID
+<medicine_id>   | integer | 药物ID
+amount          | float   | 用药量
+unit            | string  | 用药单位
+repeat          | integer | 重复用药次数
+repeat_type     | integer | 重复类型（固定间隔、间隔递增、间隔递减、自定义间隔）
+interval        | integer | 间隔时间（秒）
+interval_increment  | integer | 间隔时间增量（秒）
+
+--------------------------------------------------------------------------------
+
+### `pharmacy_medicine_interval` 用药方案药物使用间隔
+
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<pharmacy_medicine_id>  | integer | 用药方案药物ID
+cycle           | integer | 周期数
+interval        | integer | 间隔
+
+--------------------------------------------------------------------------------
+
+### `questionnaire` 问卷
+
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+title           | string  | 题目
+description     | text    | 描述
+tips            | text    | 建议
+direction       | text    | 指导
+
+--------------------------------------------------------------------------------
+
+### `survey` 随访调查  
+
+属性名           | 类型     | 注释
+--------------- | ------- | -----
+<questionnaire_id>  | integer | 问卷ID
+<user_id>       | 医生ID
 
 
 survey_patient   参加随访的病人 <Join Table>
