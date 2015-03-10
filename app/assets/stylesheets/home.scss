@@ -47,6 +47,16 @@
 
 .search-box-top {
   .search-title {
-    line-height: 38px;
+    > .icon {
+      margin-top: -8px;
+      font-size: 1em;
+    }
+    line-height: 2em;
+  }
+}
+
+.search-result-box {
+  .items {
+    margin-left: 20px;
   }
 }
