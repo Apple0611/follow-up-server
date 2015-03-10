@@ -1,3 +1,32 @@
 // Place all the styles related to the Diseases controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.disease-box {
+  margin-top: 20px !important;
+  .tab-content {
+    margin-top: 30px;
+
+    .row {
+      margin-bottom: 30px;
+    }
+    section.header {
+      >.title {
+        >.ui.header {
+          margin-top: -4px;
+        }
+        >.sub.header {
+          margin-top: -10px;
+          color: #999;
+          font-weight: lighter;
+        }
+      }
+    }
+    section.content {
+      >p {
+        line-height: 24px;
+        text-indent: 2em;
+      }
+    }
+  }
+}
