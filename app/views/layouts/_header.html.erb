@@ -1,0 +1,31 @@
+<div class="top-banner">
+  <div class="ui page grid">
+    <div class="sixteen wide column">
+      <div class="ui secondary menu">
+        <a class="active item">
+          <i class="home icon"></i> <%= t('home') %>
+        </a>
+        <% unless defined? hide_search %>
+        <div class="item">
+          <div class="ui icon input">
+            <input type="text" placeholder="<%= t('search') %> ...">
+            <i class="search link icon"></i>
+          </div>
+        </div>
+        <% end %>
+        <div class="right menu">
+          <a class="item">
+            <i class="mail icon"></i> <%= t('message') %>
+            <div class="floating ui teal circular label">5</div>
+          </a>
+          <a class="item">
+            <i class="user icon"></i> <%= t('personal') %>
+          </a>
+          <a class="ui item">
+            <i class="log out icon"></i> <%= t('logout') %>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
