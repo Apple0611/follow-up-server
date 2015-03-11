@@ -5,7 +5,7 @@
 .disease-box {
   margin-top: 20px !important;
   .tab-content {
-    margin-top: 30px;
+    margin-top: 40px;
 
     .row {
       margin-bottom: 30px;
@@ -13,17 +13,17 @@
     section.header {
       >.title {
         >.ui.header {
-          margin-top: -4px;
+          margin-top: -10px;
         }
         >.sub.header {
-          margin-top: -10px;
+          margin-top: -6px;
           color: #999;
           font-weight: lighter;
         }
       }
     }
     section.content {
-      >p {
+      p {
         line-height: 24px;
         text-indent: 2em;
       }
