@@ -1,39 +1,135 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: "layouts/header" %>
 
-<h1>Listing Disease Categories</h1>
+<div class="category-box wrap">
+  <div class="ui page grid">
+    <div class="sixteen wide column">
+      <h2 class="ui header title">分类：呼吸系统疾病</h2>
+      <div class="fluid guide">
+        <div class="ui breadcrumb">
+          <a class="section" href="/">首页</a>
+          <i class="right chevron icon divider"></i>
+          <div class="active section">呼吸系统疾病</div>
+        </div>
+      </div>
+      <div class="description">  呼吸系统疾病是一种常见病、多发病，主要病变在气管、支气管、肺部及胸腔，病变轻者多咳嗽、胸痛、呼吸受影响，重者呼吸困难、缺氧，甚至呼吸衰竭而致死。在城市的死亡率占第3位，而在农村则占首位。更应重视的是由于大气污染、吸烟、人口老龄化及其他因素，使国内外的慢性阻塞性肺病（简称慢阻肺，包括慢性支气管炎、肺气肿、肺心病）、支气管哮喘、肺癌、肺部弥散性间质纤维化，以及肺部感染等疾病的发病率、死亡率有增无减。
+      </div>
+    </div>
+  </div>
+</div>
 
-<table class="ui table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Parent</th>
-      <th>Level</th>
-      <th>Is active</th>
-      <th>Is empty</th>
-      <th>Is bottom</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="ui divider"></div>
 
-  <tbody>
-    <% @disease_categories.each do |disease_category| %>
-      <tr>
-        <td><%= disease_category.name %></td>
-        <td><%= disease_category.description %></td>
-        <td><%= disease_category.parent %></td>
-        <td><%= disease_category.level %></td>
-        <td><%= disease_category.is_active %></td>
-        <td><%= disease_category.is_empty %></td>
-        <td><%= disease_category.is_bottom %></td>
-        <td><%= link_to 'Show', disease_category %></td>
-        <td><%= link_to 'Edit', edit_disease_category_path(disease_category) %></td>
-        <td><%= link_to 'Destroy', disease_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="wrap">
+  <div class="ui page grid">
+    <div class="four wide column">
+      <h3 class="ui header">筛选科室</h3>
 
-<br>
+      <div class="ui fluid vertical accordion menu">
+          <a class="active item"><div class="ui teal label">25</div>全部</a>
+          <div class="item">
+            <a class="active bold title">
+              <i class="dropdown icon"></i>
+              四川大学华西医院
+            </a>
+            <div class="active content">
+              <a class="item"><div class="ui label">15</div>呼吸外科</a>
+              <a class="item"><div class="ui label">2</div>结核病科</a>
+              <a class="item"><div class="ui label">4</div>胸外科</a>
+            </div>
+          </div>
+          <div class="item">
+            <a class="bold title">
+              <i class="dropdown icon"></i>
+              成都市第一人民医院
+            </a>
+            <div class="content">
+              <a class="item"><div class="ui label">15</div>呼吸外科</a>
+              <a class="item"><div class="ui label">2</div>结核病科</a>
+              <a class="item"><div class="ui label">4</div>胸外科</a>
+            </div>
+          </div>
+        </div>
 
-<%= link_to 'New Disease category', new_disease_category_path, class:'positive ui button' %>
+    </div>
+
+    <div class="search-result-box twelve wide column">
+      <h3 class="ui header">本分类有 25 个下级分类</h3>
+      <div class="ui divider"></div>
+      <div class="ui items">
+
+        <div class="item">
+          <div class="content">
+            <h3><a class="header">Header</a></h3>
+            <div class="meta">
+              <span>Description</span>
+            </div>
+            <div class="description">
+              <img src="/images/wireframe/short-paragraph.png" class="ui wireframe image">
+            </div>
+            <div class="extra">
+              Additional Details
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <h3><a class="header">Header</a></h3>
+            <div class="meta">
+              <span>Description</span>
+            </div>
+            <div class="description">
+              <img src="/images/wireframe/short-paragraph.png" class="ui wireframe image">
+            </div>
+            <div class="extra">
+              Additional Details
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <h3><a class="header">Header</a></h3>
+            <div class="meta">
+              <span>Description</span>
+            </div>
+            <div class="description">
+              <img src="/images/wireframe/short-paragraph.png" class="ui wireframe image">
+            </div>
+            <div class="extra">
+              Additional Details
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="content">
+            <h3><a class="header">Header</a></h3>
+            <div class="meta">
+              <span>Description</span>
+            </div>
+            <div class="description">
+              <img src="/images/wireframe/short-paragraph.png" class="ui wireframe image">
+            </div>
+            <div class="extra">
+              Additional Details
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination-box">
+          <div class="ui column centered grid">
+            <div class="ui centered borderless pagination menu">
+              <a class="item"><i class="left arrow icon"></i> 上一页</a>
+              <a class="item">1</a>
+              <a class="item">2</a>
+              <a class="item">3</a>
+              <a class="item">4</a>
+              <a class="item">下一页 <i class="icon right arrow"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer" %>
