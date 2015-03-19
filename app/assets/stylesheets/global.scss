@@ -4,23 +4,24 @@ body {
  }
 
 .wrap {
-   padding: 0 80px 0 80px;
-   margin-top: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-top: 30px;
  }
 
- .clear-both {
-   clear: both;
- }
+.clear-both {
+  clear: both;
+}
 
- .bold {
-   font-weight: bold;
- }
+.bold {
+  font-weight: bold;
+}
 
- .lighter {
-   font-weight: lighter;
- }
+.lighter {
+  font-weight: lighter;
+}
 
-.top-banner {
+.header-top-banner {
   padding: 15px 74px 15px 74px;
   background-color: #f5f5f5;
   .circular.label {

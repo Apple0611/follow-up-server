@@ -2,12 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.category-box {
-  padding-bottom: 10px;
+// DiseaseCategories Controller
+body.disease_categories {
+  
+  // index Action
+  >.index {
 
-  .description {
-    margin-top: 14px;
-    line-height: 24px;
-    text-indent: 2em;
+    .nav-box {
+      padding-bottom: 12px;
+
+      .description {
+        margin-top: 14px;
+        line-height: 24px;
+        text-indent: 2em;
+      }
+    }
+
   }
+  
 }

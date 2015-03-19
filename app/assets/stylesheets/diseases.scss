@@ -2,36 +2,47 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.disease-box {
-  margin-top: 20px !important;
+// Diseases Controller
+body.diseases {
+  
+  // index Action
+  >.index {
 
-  .tab-content {
-    margin-top: 40px;
+    .nav-box {
 
-    .row {
-      margin-bottom: 30px;
     }
-    section.header {
-      >.title {
-        >.ui.header {
-          margin-top: -10px;
+
+    .disease-box {
+      margin-top: 20px !important;
+      .tab-content {
+        margin-top: 40px;
+        .row {
+          margin-bottom: 30px;
         }
-        >.sub.header {
-          margin-top: -6px;
-          color: #999;
-          font-weight: lighter;
+        section.header {
+          >.title {
+            >.ui.header {
+              margin-top: -10px;
+            }
+            >.sub.header {
+              margin-top: -6px;
+              color: #999;
+              font-weight: lighter;
+            }
+          }
+        }
+        section.content {
+          p {
+            line-height: 24px;
+            text-indent: 2em;
+          }
         }
       }
-    }
-    section.content {
-      p {
-        line-height: 24px;
-        text-indent: 2em;
+      .tab-treatment {
+        margin-top: 20px;
       }
     }
+
   }
 
-  .tab-treatment {
-    margin-top: 20px;
-  }
 }

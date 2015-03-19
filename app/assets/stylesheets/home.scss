@@ -2,67 +2,76 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.top-steps {
-  .content > a{
-    text-align: center;
-  }
-}
+// Home Controller
+body.home {
 
-.search-box {
-  background-color: #f5f5f5;
-  .search-title {
-    padding-top: 6px;
-    color: #999;
-    > .icon {
-      font-size: 18px;
+  // index Action
+  >.index {
+
+    .top-steps {
+      .content > a {
+        text-align: center;
+      }
     }
-    > .content {
-      font-size: 18px;
-      font-weight: lighter;
+
+    .search-box {
+      background-color: #f5f5f5;
+      .search-title {
+        padding-top: 6px;
+        color: #999;
+        > .icon {
+          font-size: 18px;
+        }
+        > .content {
+          font-size: 18px;
+          font-weight: lighter;
+        }
+      }
+      input {
+        height: 50px;
+      }
+    }
+
+    .news-box {
+      .segment {
+        margin-top: 20px !important;
+      }
+      .divided.list > .item:first-child {
+        margin-top: 0;
+        padding-top: 0;
+      }
+      .divided.list > .item {
+        margin-top: 10px;
+        padding-top: 10px;
+        .description {
+          padding-top: 4px;
+          color: #999;
+          font-size: 12px;
+        }
+      }
+    }
+
+  }
+
+  // search Action
+  >.search {
+
+    .box-top {
+      margin-bottom: 30px;
+      .search-title {
+        > .icon {
+          margin-top: -8px;
+          font-size: 1em;
+        }
+        line-height: 2em;
+      }
+    }
+
+    .result-box {
+      .items {
+        margin-left: 20px;
+      }
     }
   }
-  input {
-    height: 50px;
-  }
-}
 
-.news-box {
-  .segment {
-    margin-top: 20px !important;
-  }
-  .divided.list > .item:first-child {
-    margin-top: 0;
-    padding-top: 0;
-  }
-  .divided.list > .item {
-    margin-top: 10px;
-    padding-top: 10px;
-    .description {
-      padding-top: 4px;
-      color: #999;
-      font-size: 12px;
-    }
-  }
-}
-
-.search-box-top {
-  margin-bottom: 30px;
-  .search-title {
-    > .icon {
-      margin-top: -8px;
-      font-size: 1em;
-    }
-    line-height: 2em;
-  }
-}
-
-.search-result-box {
-  .items {
-    margin-left: 20px;
-  }
-}
-
-.pagination-box {
-  margin-top: 60px;
-  margin-bottom: 10px;
 }
