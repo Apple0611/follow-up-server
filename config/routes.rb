@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # disease_categories
   get 'category', to: 'disease_categories#index'
+  get 'category/:id', to: 'disease_categories#view', as: 'disease_categories'
 
   # disease
   get 'disease', to: 'diseases#index'

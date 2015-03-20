@@ -5,10 +5,11 @@
 // DiseaseCategories Controller
 body.disease_categories {
   
-  // index Action
-  >.index {
+  // view Action
+  >.view {
 
-    .nav-box {
+    .intro-box {
+      margin-top: 14px;
       padding-bottom: 12px;
 
       .description {

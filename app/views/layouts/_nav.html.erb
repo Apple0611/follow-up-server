@@ -1,0 +1,25 @@
+<div class="nav-box wrap">
+  <div class="ui page grid">
+    <div class="sixteen wide column">
+      <div class="ui large breadcrumb">
+        <%= link_to "首页", root_path, class: "section" %>
+        <i class="right chevron icon divider"></i>
+        <%- if controller.controller_name ==  "disease_categories"%>
+          <%- if action_name == "index" %>
+            <div class="active section">全部疾病</div>
+          <%- else %>
+            <%= link_to "全部疾病", {controller: "disease_categories", action: "index"}, class: "section" %>
+            <i class="right chevron icon divider"></i>
+            <div class="active section"><%=@disease_category.name %></div>
+          <%- end %>
+        <%- elsif controller.controller_name ==  "diseases" %>
+          <%= link_to "全部疾病", {controller: "disease_categories", action: "index"}, class: "section" %>
+          <i class="right chevron icon divider"></i>
+          <%= link_to @disease_category.name, disease_categories_path(@disease_category), class: "section" %>
+          <i class="right chevron icon divider"></i>
+          <div class="active section">感冒</div>
+        <%- end %>
+      </div>
+    </div>
+  </div>
+</div>

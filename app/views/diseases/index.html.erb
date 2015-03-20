@@ -1,18 +1,6 @@
 <%= render "layouts/header" %>
 
-<div class="nav-box wrap">
-  <div class="ui page grid">
-    <div class="sixteen wide column">
-      <div class="ui large breadcrumb">
-        <%= link_to "首页", root_path, class: "section" %>
-        <i class="right chevron icon divider"></i>
-        <%= link_to "呼吸系统疾病", {controller: "disease_categories"}, class: "section" %>
-        <i class="right chevron icon divider"></i>
-        <div class="active section">感冒</div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render "layouts/nav" %>
 
 <div class="disease-box wrap">
   <div class="ui page grid">
