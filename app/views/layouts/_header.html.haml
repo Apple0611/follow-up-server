@@ -1,0 +1,24 @@
+%div.header-top-banner
+  %div.ui.page.grid
+    %div.sixteen.wide.column
+      %div.ui.secondary.menu
+        %a.active.item{href: "/"}
+          %i.home.icon
+          = t('home')
+        - unless defined? hide_search
+          %div.item
+            %div.ui.icon.input
+              %input{type: "text", placeholder: t('search')}
+              %i.search.link.icon
+        %div.right.menu
+          %a.item
+            %i.mail.icon
+            = t('message')
+            %div.floating.ui.teal.circular.label
+              5
+          %a.item
+            %i.user.icon
+            = t('personal')
+          %a.item
+            %i.log.out.icon
+            =t('logout')
