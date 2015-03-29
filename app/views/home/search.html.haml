@@ -1,53 +1,53 @@
 = render partial: "layouts/header", locals: {hide_search: true}
-%div.box-top.wrap
-  %div.ui.page.grid
-    %div.fout.wide.column
+.box-top.wrap
+  .ui.page.grid
+    .fout.wide.column
       %h2.ui.header.search-title
         %i.search.icon
-    %div.ten.wide.column
-      %div.ui.fluid.icon.input
+    .ten.wide.column
+      .ui.fluid.icon.input
         %input{type: "text"}
-    %div.two.wide.column
-      %div.ui.fluid.button 搜索
-%div.ui.divider
-%div.wrap
-  %div.ui.page.grid
-    %div.four.wide.column
+    .two.wide.column
+      .ui.fluid.button 搜索
+.ui.divider
+.wrap
+  .ui.page.grid
+    .four.wide.column
       %h3.ui.header 筛选类型
-      %div.ui.fluid.vertical.menu
+      .ui.fluid.vertical.menu
         %a.active.item
-          %div.ui.teal.label 112
+          .ui.teal.label 112
           全部
         %a.item
-          %div.ui.label 51
+          .ui.label 51
           疾病
         %a.item
-          %div.ui.label 12
+          .ui.label 12
           分类
         %a.item
-          %div.ui.label 4
+          .ui.label 4
           医生
         %a.item
-          %div.ui.label 2
+          .ui.label 2
           科室
-    %div.result-box.twelve.wide.column
+    .result-box.twelve.wide.column
       %h3.ui.header 一共 112 条结果
-      %div.ui.divider
-      %div.ui.items
+      .ui.divider
+      .ui.items
         - 5.times do
-          %div.item
-            %div.content
+          .item
+            .content
               %h3
                 %a.header Header
-              %div.meate
+              .meate
                 %span Description
-              %div.description
+              .description
                 %img{class: "ui wireframe image", src: "/images/wireframe/short-paragraph.png"}
-              %div.extra
+              .extra
                 Additional Details
-        %div.pagination-box
-          %div.ui.column.centered.grid
-            %div.ui.centered.borderless.pagination.menu
+        .pagination-box
+          .ui.column.centered.grid
+            .ui.centered.borderless.pagination.menu
               %a.item
                 %i.left.arrow.icon
                 上一页

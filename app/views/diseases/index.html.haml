@@ -1,0 +1,143 @@
+= render "layouts/header"
+= render "layouts/nav"
+.disease-box.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      .ui.tabular.menu
+        %a.active.item{"data-tab" => "first"} 疾病详情
+        %a.item{"data-tab" => "second"} 治疗方案
+      .ui.active.tab{"data-tab" => "first"}
+        %article.tab-content
+          %section.row.header
+            .left.floated.column.title
+              %h1.ui.header 上呼吸道感染
+              .sub.header 最新更新：2015年3月6日
+            .right.floated.column
+              .ui.button
+                %i.edit.icon>
+                编辑
+              .ui.button
+                %i.star.icon>
+                收藏
+              .ui.button
+                %i.share.icon>
+                分享
+            .clear-both
+          %section.ui.grid.row.content
+            .eleven.wide.column
+              %p 上呼吸道感染简称上感，又称普通感冒。是包括鼻腔、咽或喉部急性炎症的总称。广义的上感不是一个疾病诊断，而是一组疾病，包括普通感冒、病毒性咽炎、喉炎、疱疹性咽峡炎、咽结膜热、细菌性咽-扁桃体炎。狭义的上感又称普通感冒，是最常见的急性呼吸道感染性疾病，多呈自限性，但发生率较高。成人每年发生2～4次，儿童发生率更高，每年6～8次。全年皆可发病，冬春季较多。
+            .five.wide.column
+              .ui.card
+                .image
+                  %img{:src => "/images/wireframe/image.png"}
+                .content
+                  .description
+                    上呼吸道感染简称上感，又称普通感冒。是包括鼻腔、咽或喉部急性炎症的总称。
+              %table.ui.small.table
+                %thead
+                  %tr
+                    %th.fifteen.wide{:colspan => "2"} 基本属性
+                %tbody
+                  %tr
+                    %td.bold 别称
+                    %td 普通感冒，上感
+                  %tr
+                    %td.bold 英文名称
+                    %td upper respiratory tract infection
+                  %tr
+                    %td.bold 就诊科室
+                    %td 呼吸内科
+                  %tr
+                    %td.bold 常见病因
+                    %td 病毒感染，细菌感染
+      .ui.tab{"data-tab" => "second"}
+        .ui.row.grid.tab-treatment
+          .four.wide.column
+            %h3.ui.header 筛选亚类
+            .ui.fluid.vertical.menu
+              %a.active.item
+                .ui.teal.label> 112
+                全部
+              %a.item
+                .ui.label> 51
+                疾病
+              %a.item
+                .ui.label> 12
+                分类
+              %a.item
+                .ui.label> 4
+                医生
+              %a.item
+                .ui.label> 2
+                科室
+            %h3.ui.header 筛选科室
+            .ui.fluid.vertical.secondary.menu
+              %a.active.item
+                .ui.teal.label> 112
+                全部
+              %a.item
+                .ui.label> 51
+                疾病
+              %a.item
+                .ui.label> 12
+                分类
+              %a.item
+                .ui.label> 4
+                医生
+              %a.item
+                .ui.label> 2
+                科室
+          .search-result-box.twelve.wide.column
+            .left.floated.column
+              %h3.ui.header 一共 112 条结果
+            .right.floated.column
+              .ui.primary.button
+                %i.plus.icon>
+                新建
+            .clear-both
+            .ui.divider
+            .ui.items
+              .item
+                .content
+                  %h3
+                    %a.header Header Header Header Header Header
+                  .meta
+                    %span Description Description Description Description Description
+              .item
+                .content
+                  %h3
+                    %a.header Header Header Header Header Header
+                  .meta
+                    %span Description Description Description Description Description
+              .item
+                .content
+                  %h3
+                    %a.header Header Header Header Header Header
+                  .meta
+                    %span Description Description Description Description Description
+              .item
+                .content
+                  %h3
+                    %a.header Header Header Header Header Header
+                  .meta
+                    %span Description Description Description Description Description
+              .item
+                .content
+                  %h3
+                    %a.header Header Header Header Header Header
+                  .meta
+                    %span Description Description Description Description Description
+              .pagination-box
+                .ui.column.centered.grid
+                  .ui.centered.borderless.pagination.menu
+                    %a.item
+                      %i.left.arrow.icon
+                      上一页
+                    %a.item 1
+                    %a.item 2
+                    %a.item 3
+                    %a.item 4
+                    %a.item
+                      下一页
+                      %i.icon.right.arrow
+= render "layouts/footer"

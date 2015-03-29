@@ -1,24 +1,24 @@
-%div.header-top-banner
-  %div.ui.page.grid
-    %div.sixteen.wide.column
-      %div.ui.secondary.menu
-        %a.active.item{href: "/"}
+.header-top-banner
+  .ui.page.grid
+    .sixteen.wide.column
+      .ui.secondary.menu
+        %a.active.item{:href => "/"}
           %i.home.icon
           = t('home')
         - unless defined? hide_search
-          %div.item
-            %div.ui.icon.input
-              %input{type: "text", placeholder: t('search')}
+          .item
+            .ui.icon.input
+              %input{:placeholder => t('search'), :type => "text"}
               %i.search.link.icon
-        %div.right.menu
+        .right.menu
           %a.item
             %i.mail.icon
             = t('message')
-            %div.floating.ui.teal.circular.label
+            .floating.ui.teal.circular.label
               5
           %a.item
             %i.user.icon
             = t('personal')
           %a.item
             %i.log.out.icon
-            =t('logout')
+            = t('logout')

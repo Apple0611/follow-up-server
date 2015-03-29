@@ -1,20 +1,20 @@
-%div.nav-box.wrap
-  %div.ui.page.grid
-    %div.sixteen.wide.column
-      %div.ui.large.breadcrumb
+.nav-box.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      .ui.large.breadcrumb
         = link_to "首页", root_path, class: "section"
         %i.right.chevron.icon.divider
         - if controller.controller_name ==  "disease_categories"
           - if action_name == "index"
-            %div.active.section 全部疾病
+            .active.section 全部疾病
           - else
             = link_to "全部疾病", {controller: "disease_categories", action: "index"}, class: "section"
             %i.right.chevron.icon.divider
-            %div.active.section
+            .active.section
               = @disease_category.name
         - elsif controller.controller_name ==  "diseases"
           = link_to "全部疾病", {controller: "disease_categories", action: "index"}, class: "section"
           %i.right.chevron.icon.divider
           = link_to @disease_category.name, disease_categories_path(@disease_category), class: "section"
           %i.right.chevron.icon.divider
-          %div.active.section 感冒
+          .active.section 感冒
