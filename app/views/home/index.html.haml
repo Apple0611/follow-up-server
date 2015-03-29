@@ -1,0 +1,75 @@
+= render "layouts/header"
+%div.top-steps.wrap
+  %div.ui.page.grid
+    %div.sixteen.wide.column
+      %div.ui.four.column.grid
+        - @index_top_steps_card.each do |card|
+          %div.column
+            %div.ui.fluid.card
+              %div.image
+                = image_tag "img/" + card[0]
+              %div.content
+                %a.header
+                  = t(card[1])
+%div.search-box.wrap
+  %div.ui.page.grid
+    %div.sixteen.wide.column
+      %div.column
+        %h3.ui.header.search-title
+          %i.search.icon
+          %div.content
+            = t('search_in_database')
+        %div.ui.fluid.icon.input
+          %input{type: "text", placeholder: t('search')+"..."}
+          %i.search.icon
+%div.news-box.wrap
+  %div.ui.page.grid
+    %div.ten.wide.column
+      %div.ui.feed
+        - @index_news_feed_events.each do |event|
+          %div.event
+            %div.label
+              - case event[:label_type]
+              - when "i"
+                %i{class: event[:label_content] + " icon"}
+              - when "img"
+                %img{src: event[:label_content]}
+            %div.content
+              %div.summary
+                = raw event[:summary]
+                %div.date
+                  = event[:date]
+              - if event.has_key? :extra_type
+                %div{class: "extra " + event[:extra_type]}
+                  = raw event[:extra_content]
+              %div.meta
+                %a.like
+                  %i.like.icon
+                  = event[:like]
+    %div.six.wide.column
+      %div.ui.info.message
+        %div.header 热点聚焦
+        %p Pull requests are fantastic. Create pull requests without leaving the warm embrace of GitHub for Windows.
+      %div.ui.segment
+        %div.ui.top.attached.label 我的治疗方案
+        %div.ui.divided.list
+          - @index_news_my_treatment.each do |t|
+            %a.item
+              %i.star.icon
+              %div.content
+                %div.header
+                  = t[:header]
+                %div.description
+                  = t[:desc]
+      %div.ui.segment
+        %div.ui.top.attached.label 我参与的
+        %div.ui.list
+          - @index_news_my_contribution.each do |c|
+            %a.item
+              %i{class: c[:icon] + " icon"}
+              %div.content
+                %div.header 
+                  = c[:header]
+                %div.description 
+                  = c[:desc]
+= render "layouts/footer"
