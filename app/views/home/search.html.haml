@@ -1,0 +1,60 @@
+= render partial: "layouts/header", locals: {hide_search: true}
+%div.box-top.wrap
+  %div.ui.page.grid
+    %div.fout.wide.column
+      %h2.ui.header.search-title
+        %i.search.icon
+    %div.ten.wide.column
+      %div.ui.fluid.icon.input
+        %input{type: "text"}
+    %div.two.wide.column
+      %div.ui.fluid.button 搜索
+%div.ui.divider
+%div.wrap
+  %div.ui.page.grid
+    %div.four.wide.column
+      %h3.ui.header 筛选类型
+      %div.ui.fluid.vertical.menu
+        %a.active.item
+          %div.ui.teal.label 112
+          全部
+        %a.item
+          %div.ui.label 51
+          疾病
+        %a.item
+          %div.ui.label 12
+          分类
+        %a.item
+          %div.ui.label 4
+          医生
+        %a.item
+          %div.ui.label 2
+          科室
+    %div.result-box.twelve.wide.column
+      %h3.ui.header 一共 112 条结果
+      %div.ui.divider
+      %div.ui.items
+        - 5.times do
+          %div.item
+            %div.content
+              %h3
+                %a.header Header
+              %div.meate
+                %span Description
+              %div.description
+                %img{class: "ui wireframe image", src: "/images/wireframe/short-paragraph.png"}
+              %div.extra
+                Additional Details
+        %div.pagination-box
+          %div.ui.column.centered.grid
+            %div.ui.centered.borderless.pagination.menu
+              %a.item
+                %i.left.arrow.icon
+                上一页
+              - 4.times do |i|
+                %a.item
+                  = i
+              %a.item
+                %i.right.arrow.icon
+                下一页
+= render "layouts/footer"
