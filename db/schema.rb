@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306071216) do
+ActiveRecord::Schema.define(version: 20150330070456) do
 
   create_table "disease_categories", force: :cascade do |t|
     t.string   "name"
@@ -23,6 +23,11 @@ ActiveRecord::Schema.define(version: 20150306071216) do
     t.boolean  "is_bottom"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "icd"
+    t.string   "name_en"
+    t.string   "en_acronym"
+    t.string   "name_py"
+    t.string   "py_acronym"
   end
 
   create_table "diseases", force: :cascade do |t|

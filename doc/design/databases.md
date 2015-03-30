@@ -9,6 +9,11 @@
 属性名           | 类型     | 注释
 --------------- | ------- | -----
 `name`          | string  | 疾病分类名
+`icd`           | string  | 疾病分类ICD
+`name_en`       | string  | 英文名
+`en_acronym`    | string  | 英文缩写
+`name_py`       | string  | 拼音名
+`py_acronym`    | string  | 拼音缩写
 `description`   | text    | 描述
 `parent`        | integer | 父级分类ID
 `level`         | integer | 层级
@@ -17,7 +22,7 @@
 `is_bottom`     | boolean | 是否为最底层
 
 ```bash
-rails g scaffold DiseaseCategory name:string description:text parent:integer level:integer is_active:boolean is_empty:boolean is_bottom:boolean
+rails g scaffold DiseaseCategory name:string icd:string name_en:string en_acronym:string name_py:string py_acronym:string description:text parent:integer level:integer is_active:boolean is_empty:boolean is_bottom:boolean
 ```
 
 --------------------------------------------------------------------------------
