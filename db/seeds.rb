@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-DiseaseCategory.create(name: "内科", level: 0, is_active: true, is_empty: false, is_bottom: false, name_en: "Internal Medicine", en_acronym: "IM", name_py: "Nei Ke", py_acronym: "NK")
+DiseaseCategory.create(name: "内科", parent: 0, level: 0, is_active: true, is_empty: false, is_bottom: false, name_en: "Internal Medicine", en_acronym: "IM", name_py: "Nei Ke", py_acronym: "NK")
 
 DiseaseCategory.create(name: "心血管内科", parent: 1, level: 1, is_active: true, is_empty: false, is_bottom: false, name_en: "Cardiovascular Medicine", en_acronym: "CM", name_py: "Xin Xue Guan Nei Ke", py_acronym: "XXGNK")
 
@@ -18,3 +18,4 @@ DiseaseCategory.create(name: "心脏疾病", parent: 2, level: 2, is_active: tru
 
 DiseaseCategory.create(name: "血管疾病", parent: 2, level: 2, is_active: true, is_empty: false, is_bottom: true, name_en: "Vascular Disease", en_acronym: "VD", name_py: "Xue Guan Ji Bing", py_acronym: "XGJB")
 
+DiseaseCategory.create(name: "外科", parent: 0, level: 0, is_active: true, is_empty: false, is_bottom: false, name_en: "Surgery", en_acronym: "S", name_py: "Wai Ke", py_acronym: "WK")
