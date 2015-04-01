@@ -11,23 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330070456) do
+ActiveRecord::Schema.define(version: 20150331082526) do
 
   create_table "disease_categories", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "parent"
-    t.integer  "level"
+    t.integer  "parent_id"
+    t.integer  "depth"
     t.boolean  "is_active"
     t.boolean  "is_empty"
     t.boolean  "is_bottom"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "icd"
     t.string   "name_en"
     t.string   "en_acronym"
     t.string   "name_py"
     t.string   "py_acronym"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "children_count"
   end
 
   create_table "diseases", force: :cascade do |t|
