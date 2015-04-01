@@ -1,6 +1,7 @@
 class DiseaseCategoriesController < ApplicationController
 
   def index
+    @category_top = DiseaseCategory.roots
   end
 
   def view
