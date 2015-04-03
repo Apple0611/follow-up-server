@@ -3,9 +3,9 @@
 .intro-box.wrap
   .ui.page.grid
     .sixteen.wide.column
-      %h2.ui.header.title 分类：呼吸系统疾病
+      %h2.ui.header.title 分类：#{@disease_category[:name]}
       .description
-        呼吸系统疾病是一种常见病、多发病，主要病变在气管、支气管、肺部及胸腔，病变轻者多咳嗽、胸痛、呼吸受影响，重者呼吸困难、缺氧，甚至呼吸衰竭而致死。在城市的死亡率占第3位，而在农村则占首位。更应重视的是由于大气污染、吸烟、人口老龄化及其他因素，使国内外的慢性阻塞性肺病（简称慢阻肺，包括慢性支气管炎、肺气肿、肺心病）、支气管哮喘、肺癌、肺部弥散性间质纤维化，以及肺部感染等疾病的发病率、死亡率有增无减。
+        = @disease_category[:overview]
 .ui.divider
 .wrap
   .ui.page.grid
