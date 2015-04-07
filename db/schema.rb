@@ -11,34 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331082526) do
+ActiveRecord::Schema.define(version: 20150403065649) do
 
   create_table "disease_categories", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "parent_id"
-    t.integer  "depth"
-    t.boolean  "is_active"
-    t.boolean  "is_empty"
-    t.boolean  "is_bottom"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.string   "icd"
-    t.string   "name_en"
-    t.string   "en_acronym"
-    t.string   "name_py"
-    t.string   "py_acronym"
-    t.integer  "lft"
-    t.integer  "rgt"
-    t.integer  "children_count"
+    t.string   "name",           limit: 255
+    t.text     "description",    limit: 65535
+    t.integer  "parent_id",      limit: 4
+    t.integer  "depth",          limit: 4
+    t.boolean  "is_active",      limit: 1
+    t.boolean  "is_empty",       limit: 1
+    t.boolean  "is_bottom",      limit: 1
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "icd",            limit: 255
+    t.string   "name_en",        limit: 255
+    t.string   "en_acronym",     limit: 255
+    t.string   "name_py",        limit: 255
+    t.string   "py_acronym",     limit: 255
+    t.integer  "lft",            limit: 4
+    t.integer  "rgt",            limit: 4
+    t.integer  "children_count", limit: 4
+    t.integer  "common",         limit: 4
+    t.integer  "viewed",         limit: 4
   end
 
   create_table "diseases", force: :cascade do |t|
-    t.string   "name"
-    t.text     "summary"
-    t.text     "overview"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.text     "summary",    limit: 65535
+    t.text     "overview",   limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

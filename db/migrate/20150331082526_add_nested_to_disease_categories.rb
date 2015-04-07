@@ -6,8 +6,10 @@ class AddNestedToDiseaseCategories < ActiveRecord::Migration
     
     add_column :disease_categories, :lft, :integer
     add_column :disease_categories, :rgt, :integer
-    add_column :disease_categories, :children_count, :integer
 
     DiseaseCategory.rebuild!
+
+    add_column :disease_categories, :children_count, :integer
+
   end
 end
