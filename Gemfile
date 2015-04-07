@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml-rails'
 gem 'awesome_nested_set'
+gem 'mysql2'
 
 #source 'https://rails-assets.org' do
 #  gem 'rails-assets-semantic'
