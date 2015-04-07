@@ -1,10 +1,10 @@
 class HomeController < ApplicationController
   def index
     @index_top_steps_card = [
-      ["search-disease-1.png", "search_disease"],
-      ["create-treatment-1.png", "create_treatment"],
-      ["create-follow-up.png", "create_follow-up"],
-      ["statistic-1.png", "statistics"]
+      {image: "search-disease-1.png", title: "search_disease", link: "search"},
+      {image: "create-treatment-1.png", title: "create_treatment", link: "category"},
+      {image: "create-follow-up.png", title: "create_follow-up", link: ""},
+      {image: "statistic-1.png", title: "statistics", link: ""}
     ]
     @index_news_feed_events = [
       {label_type: "img", label_content: "/images/avatar/small/elliot.jpg", summary: "<a class=\"user\">Elliot Fu</a> added you as a friend", date: "1 Hour Ago", like: "4 Likes"}, 

@@ -7,10 +7,10 @@
           .column
             .ui.fluid.card
               .image
-                = image_tag "img/" + card[0]
+                = image_tag "img/" + card[:image]
               .content
-                %a.header
-                  = t(card[1])
+                %a.header{href: card[:link]}
+                  = t(card[:title])
 .search-box.wrap
   .ui.page.grid
     .sixteen.wide.column
