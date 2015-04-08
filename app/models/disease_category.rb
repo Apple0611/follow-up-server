@@ -5,9 +5,9 @@ class DiseaseCategory < ActiveRecord::Base
   acts_as_nested_set
 
   def add_to_child_of(parent)
+    self.move_to_child_of(parent)
     parent[:children_count] += 1
     parent.save
-    self.move_to_child_of(parent)
   end
 
 end
