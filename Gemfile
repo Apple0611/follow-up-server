@@ -22,9 +22,10 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'haml-rails'
-gem 'awesome_nested_set'
-gem 'mysql2'
+gem 'haml-rails', '~> 0.9.0'
+gem 'awesome_nested_set', '~> 3.0.2'
+gem 'mysql2', '~> 0.3.18'
+gem 'ruby-pinyin', '~> 0.4.5'
 
 #source 'https://rails-assets.org' do
 #  gem 'rails-assets-semantic'
