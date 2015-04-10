@@ -15,10 +15,14 @@ class DiseaseCategory < ActiveRecord::Base
 
   protected
   before_validation do
-    self.children_count = 0
     self.en_acronym = acronym(name_en)
     self.name_py = PinYin.of_string(name).join(' ')
     self.py_acronym = acronym(name_py)
+  end
+
+  before_create do
+    self.children_count = 0
+    self.viewed = 0
   end
 
   def acronym(string)
