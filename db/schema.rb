@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150408055753) do
+ActiveRecord::Schema.define(version: 20150410115638) do
 
   create_table "disease_categories", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150408055753) do
     t.integer  "lft",            limit: 4
     t.integer  "rgt",            limit: 4
     t.integer  "children_count", limit: 4
-    t.integer  "common",         limit: 4
     t.integer  "viewed",         limit: 4
+    t.boolean  "common",         limit: 1
   end
 
   create_table "diseases", force: :cascade do |t|
