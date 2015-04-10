@@ -7,5 +7,5 @@ module ApplicationHelper
       object
     end
   end
-  
+
 end
