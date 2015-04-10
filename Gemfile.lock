@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/collectiveidea/awesome_nested_set.git
+  revision: 783b41533c4927c152175a5bb8504e80bffbb7e9
+  specs:
+    awesome_nested_set (3.0.2)
+      activerecord (>= 4.0.0, < 5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -40,8 +47,6 @@ GEM
     arel (6.0.0)
     autotest-rails (4.2.1)
       ZenTest (~> 4.5)
-    awesome_nested_set (3.0.2)
-      activerecord (>= 4.0.0, < 5)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
@@ -131,6 +136,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    rmmseg-cpp (0.2.9)
     rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.1)
@@ -148,6 +154,8 @@ GEM
       rspec-mocks (~> 3.2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
+    ruby-pinyin (0.4.5)
+      rmmseg-cpp (~> 0.2)
     ruby_parser (3.6.5)
       sexp_processor (~> 4.1)
     sass (3.4.13)
@@ -193,17 +201,18 @@ PLATFORMS
 
 DEPENDENCIES
   autotest-rails (~> 4.2.1)
-  awesome_nested_set
+  awesome_nested_set!
   byebug
   coffee-rails (~> 4.1.0)
   database_cleaner (~> 1.4.1)
   factory_girl_rails (~> 4.5.0)
-  haml-rails
+  haml-rails (~> 0.9.0)
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2
+  mysql2 (~> 0.3.18)
   rails (~> 4.2.0)
   rspec-rails (~> 3.2.1)
+  ruby-pinyin (~> 0.4.5)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
