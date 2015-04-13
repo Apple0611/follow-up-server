@@ -3,11 +3,11 @@ class DiseaseCategoriesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
-    @category_top = DiseaseCategory.roots
+    @roots = DiseaseCategory.roots
   end
 
   def view
-    @disease_category = DiseaseCategory.find(params[:id].to_i)
+    @view = DiseaseCategory.find(params[:id].to_i)
   end
 
   private

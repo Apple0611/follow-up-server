@@ -1,5 +1,4 @@
 require 'ruby-pinyin'
-require 'application_helper'
 
 class DiseaseCategory < ActiveRecord::Base
   acts_as_nested_set
@@ -11,6 +10,10 @@ class DiseaseCategory < ActiveRecord::Base
     self.move_to_child_of(parent)
     parent[:children_count] += 1
     parent.save
+  end
+
+  def common
+    DiseaseCategory.where({parent_id: self.id, common: true})
   end
 
   protected
