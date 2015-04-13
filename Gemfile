@@ -56,4 +56,5 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.5.0'
   gem 'autotest-rails', '~> 4.2.1'
   gem 'database_cleaner', '~> 1.4.1'
+  gem 'better_errors', '~> 2.1.1'
 end
