@@ -7,11 +7,11 @@
         - if controller.controller_name ==  "disease_categories"
           - if action_name == "index"
             .active.section 全部疾病
-          - else
+          - elsif action_name == "view"
             = link_to "全部疾病", {controller: "disease_categories", action: "index"}, class: "section"
             %i.right.chevron.icon.divider
             .active.section
-              = @disease_category.name
+              = @view.name
         - elsif controller.controller_name ==  "diseases"
           = link_to "全部疾病", {controller: "disease_categories", action: "index"}, class: "section"
           %i.right.chevron.icon.divider

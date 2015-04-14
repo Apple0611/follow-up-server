@@ -3,56 +3,14 @@
 .intro-box.wrap
   .ui.page.grid
     .sixteen.wide.column
-      %h2.ui.header.title 分类：#{@disease_category[:name]}
+      %h2.ui.header.title 分类：#{@view[:name]}
       .description
-        = @disease_category[:overview]
+        = @view[:overview]
 .ui.divider
 .wrap
   .ui.page.grid
     .four.wide.column
-      %h3.ui.header 筛选科室
-      .ui.fluid.vertical.accordion.menu
-        %a.active.item
-          .ui.teal.label> 25
-          全部
-        .item
-          %a.active.bold.title
-            %i.dropdown.icon
-            四川大学华西医院
-          .active.content
-            %a.item
-              .ui.label> 15
-              呼吸外科
-            %a.item
-              .ui.label> 2
-              结核病科
-            %a.item
-              .ui.label> 4
-              胸外科
-        .item
-          %a.bold.title
-            %i.dropdown.icon
-            成都市第一人民医院
-          .content
-            %a.item
-              .ui.label> 15
-              呼吸外科
-            %a.item
-              .ui.label> 2
-              结核病科
-            %a.item
-              .ui.label> 4
-              胸外科
+      = render "disease_categories/filter_hospital"
     .search-result-box.twelve.wide.column
-      %h4.ui.header 常见疾病 (25)
-      .ui.divider
-      .ui.grid
-        .four.wide.column
-          1111
-        .four.wide.column
-          122222
-        .four.wide.column
-          3333
-        .four.wide.column
-          444444
+      = render "disease_categories/list"
 = render "layouts/footer"

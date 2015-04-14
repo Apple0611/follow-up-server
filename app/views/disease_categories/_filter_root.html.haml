@@ -2,15 +2,15 @@
 .ui.fluid.vertical.accordion.menu
   %a.active.item
     .ui.teal.label
-      = @category_top.count
+      = @roots.count
     全部
-  - @category_top.each do |top|
+  - @roots.each do |root|
     .item
       %a.active.bold.title
         %i.dropdown.icon
-        = top[:name]
+        = root[:name]
       .active.content
-        - top.children.each do |snd|
+        - root.children.each do |snd|
           %a.item{href: disease_categories_path(snd)}
             .ui.label
               = snd.children.count
