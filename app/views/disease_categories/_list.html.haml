@@ -1,11 +1,11 @@
-- @category_top.each do |top|
-  %h4.ui.header #{top[:name]}常见疾病 (25)
-  .ui.divider
-  .ui.grid
+%h4.ui.header #{@view[:name]}下级分类 (#{@count})
+.ui.divider
+.ui.grid 
+  - count_per_column = (@count + 3) / 4
+  - for i in 0...4
     .four.wide.column
-    .four.wide.column
-      122222
-    .four.wide.column
-      3333
-    .four.wide.column
-      44444
+      - for j in 0...count_per_column
+        - k = i * count_per_column + j
+        - if k < @count
+          - category = @children[k]
+          = link_to category[:name], disease_categories_path(category)

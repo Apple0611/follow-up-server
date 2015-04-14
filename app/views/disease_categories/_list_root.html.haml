@@ -1,6 +1,6 @@
 - @roots.each do |root|
   - common = root.common
-  %h4.ui.header #{root[:name]}常见疾病 (#{common.count})
+  %h4.ui.header #{root[:name]}常见下级分类 (#{common.count})
   .ui.divider
   .ui.grid
     - count_per_column = (common.count + 3) / 4
@@ -11,3 +11,4 @@
           - if k < common.count
             - category = common[k]
             = link_to category[:name], disease_categories_path(category)
+  .ui.hidden.divider
