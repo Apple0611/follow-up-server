@@ -1,10 +1,15 @@
 class DiseasesController < ApplicationController
 
-  def index
-    @diseases = Disease.all    
-    @disease_category = DiseaseCategory.new
-    @disease_category.id = 1
-    @disease_category.name = "呼吸系统疾病"
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+
+  def view
+    @view = Disease.find(params[:id].to_i)
+    @disease_category = @view.disease_category
+  end
+
+  private
+  def record_not_found
+    render file: 'public/404.html', status: 404, layout: false
   end
 
 end

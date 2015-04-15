@@ -1,0 +1,53 @@
+= render "layouts/header"
+= render "layouts/nav"
+.disease-box.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      .ui.tabular.menu
+        %a.active.item{"data-tab" => "first"} 疾病详情
+        %a.item{"data-tab" => "second"} 治疗方案
+      .ui.active.tab{"data-tab" => "first"}
+        %article.tab-content
+          %section.row.header
+            .left.floated.column.title
+              %h1.ui.header #{@view[:name]}
+              .sub.header 最新更新：#{@view[:updated_at]}
+            .right.floated.column
+              .ui.button
+                %i.edit.icon>
+                编辑
+              .ui.button
+                %i.star.icon>
+                收藏
+              .ui.button
+                %i.share.icon>
+                分享
+            .clear-both
+          %section.ui.grid.row.content
+            .eleven.wide.column
+              %p #{@view[:overview]}
+            .five.wide.column
+              .ui.card
+                .image
+                  %img{:src => "/images/wireframe/image.png"}
+                .content
+                  .description #{@view[:summary]}
+              %table.ui.small.table
+                %thead
+                  %tr
+                    %th.fifteen.wide{:colspan => "2"} 基本属性
+                %tbody
+                  %tr
+                    %td.bold 别称
+                    %td #{@view[:alt_name]}
+                  %tr
+                    %td.bold 英文名称
+                    %td #{@view[:name_en]}
+                  %tr
+                    %td.bold 就诊科室
+                    %td 呼吸内科
+                  %tr
+                    %td.bold 常见病因
+                    %td #{@view[:cause]}
+      = render "diseases/treatment"
+= render "layouts/footer"
