@@ -19,6 +19,11 @@ nm.add_to_child_of(im)
 dim = DiseaseCategory.create(name: "消化内科", name_en: "Digestion Internal Medicine", common: true)
 dim.add_to_child_of(im)
 
+rm = DiseaseCategory.create(name: "呼吸内科", name_en: "Respiratory Medicine", common: true)
+rm.add_to_child_of(im)
+
+rsti = Disease.create(name: "上呼吸道感染", name_en: "Upper Respiratory Tract Infection", disease_category: rm)
+
 hd = DiseaseCategory.create(name: "心脏疾病", name_en: "Heart Disease", common: true)
 hd.add_to_child_of(cm)
 
@@ -26,3 +31,4 @@ vd = DiseaseCategory.create(name: "血管疾病", name_en: "Vascular Disease", c
 vd.add_to_child_of(cm)
 
 s = DiseaseCategory.create(name: "外科", name_en: "Surgery", common: true)
+

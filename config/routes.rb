@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   # disease
   get 'disease', to: 'diseases#index'
+  get 'disease/:id', to: 'diseases#view', as: 'diseases'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
