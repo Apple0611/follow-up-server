@@ -10,5 +10,6 @@
           - k = j * 4 + i
           - if k < common.count
             - category = common[k]
+            %i.caret.right.icon
             = link_to category[:name], disease_categories_path(category)
   .ui.hidden.divider
