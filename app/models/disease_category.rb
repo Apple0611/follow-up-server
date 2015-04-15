@@ -3,8 +3,12 @@ require 'ruby-pinyin'
 class DiseaseCategory < ActiveRecord::Base
   acts_as_nested_set
 
-  validates :name, :name_en, :en_acronym, :name_py, :py_acronym, presence: true
-  validates :name, :name_en, uniqueness: true
+  validates :name, :name_en, :en_acronym, :name_py, :py_acronym, presence: {
+    message: "分类名称必填"
+  }
+  validates :name, :name_en, uniqueness: {
+    message: "分类名称必须唯一"
+  }
 
   def add_to_child_of(parent)
     self.move_to_child_of(parent)
