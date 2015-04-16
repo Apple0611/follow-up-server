@@ -26,8 +26,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml-rails', '~> 0.9.0'
 gem 'mysql2', '~> 0.3.18'
 
-gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set'
+gem 'awesome_nested_set', '~> 3.0.2'
 gem 'ruby-pinyin', '~> 0.4.5'
+gem 'sorcery', '~> 0.9.1'
 
 #source 'https://rails-assets.org' do
 #  gem 'rails-assets-semantic'
