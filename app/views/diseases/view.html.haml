@@ -1,5 +1,5 @@
 = render "layouts/header"
-= render "layouts/nav"
+= render "nav/nav"
 .disease-box.wrap
   .ui.page.grid
     .sixteen.wide.column
@@ -10,8 +10,8 @@
         %article.tab-content
           %section.row.header
             .left.floated.column.title
-              %h1.ui.header #{@view[:name]}
-              .sub.header 最新更新：#{@view[:updated_at]}
+              %h1.ui.header #{@disease.name}
+              .sub.header 最新更新：#{@disease.updated_at}
             .right.floated.column
               .ui.button
                 %i.edit.icon>
@@ -25,13 +25,13 @@
             .clear-both
           %section.ui.grid.row.content
             .eleven.wide.column
-              %p #{@view[:overview]}
+              %p #{@disease.overview}
             .five.wide.column
               .ui.card
                 .image
                   %img{:src => "/images/wireframe/image.png"}
                 .content
-                  .description #{@view[:summary]}
+                  .description #{@disease.summary}
               %table.ui.small.table
                 %thead
                   %tr
@@ -39,15 +39,15 @@
                 %tbody
                   %tr
                     %td.bold 别称
-                    %td #{@view[:alt_name]}
+                    %td #{@disease.alt_name}
                   %tr
                     %td.bold 英文名称
-                    %td #{@view[:name_en]}
+                    %td #{@disease.name_en}
                   %tr
                     %td.bold 就诊科室
                     %td 呼吸内科
                   %tr
                     %td.bold 常见病因
-                    %td #{@view[:cause]}
+                    %td #{@disease.cause}
       = render "diseases/treatment"
 = render "layouts/footer"

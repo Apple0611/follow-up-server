@@ -1,11 +1,25 @@
-%h4.ui.header #{@view[:name]}下级分类 (#{@count})
+%h4.ui.header #{@category[:name]}下级分类 (#{@children.count})
 .ui.divider
 .ui.grid 
-  - count_per_column = (@count + 3) / 4
+  - count_per_column = (@children.count + 3) / 4
   - for i in 0...4
     .four.wide.column
       - for j in 0...count_per_column
         - k = i * count_per_column + j
-        - if k < @count
-          - category = @children[k]
-          = link_to category[:name], disease_categories_path(category)
+        - if k < @children.count
+          - child = @children[k]
+          %i.caret.right.icon
+          = link_to child[:name], disease_categories_path(child)
+.ui.hidden.divider
+%h4.ui.header #{@category[:name]}疾病 (#{@diseases.count})
+.ui.divider
+.ui.grid 
+  - count_per_column = (@diseases.count + 3) / 4
+  - for i in 0...4
+    .four.wide.column
+      - for j in 0...count_per_column
+        - k = i * count_per_column + j
+        - if k < @diseases.count
+          - disease = @diseases[k]
+          %i.first.aid.icon
+          = link_to disease[:name], diseases_path(disease)

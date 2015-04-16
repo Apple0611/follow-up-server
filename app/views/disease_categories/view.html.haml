@@ -1,11 +1,11 @@
 = render partial: "layouts/header"
-= render partial: "layouts/nav"
+= render partial: "nav/nav"
 .intro-box.wrap
   .ui.page.grid
     .sixteen.wide.column
-      %h2.ui.header.title 分类：#{@view[:name]}
+      %h2.ui.header.title 分类：#{@category[:name]}
       .description
-        = @view[:overview]
+        = @category[:overview]
 .ui.divider
 .wrap
   .ui.page.grid

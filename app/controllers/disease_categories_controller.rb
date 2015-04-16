@@ -7,9 +7,11 @@ class DiseaseCategoriesController < ApplicationController
   end
 
   def view
-    @view = DiseaseCategory.find(params[:id].to_i)
-    @children = @view.children.order(py_acronym: :desc)
-    @count = @children.count
+    @category = DiseaseCategory.find(params[:id].to_i)
+    @children = @category.children.order(py_acronym: :desc)
+    @ancestors = @category.ancestors
+
+    @diseases = @category.diseases
   end
 
   private

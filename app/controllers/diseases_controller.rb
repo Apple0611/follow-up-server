@@ -3,8 +3,9 @@ class DiseasesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def view
-    @view = Disease.find(params[:id].to_i)
-    @disease_category = @view.disease_category
+    @disease = Disease.find(params[:id].to_i)
+    @category = @disease.disease_category
+    @ancestors = @category.self_and_ancestors
   end
 
   private

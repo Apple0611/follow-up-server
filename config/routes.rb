@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   get 'category/:id', to: 'disease_categories#view', as: 'disease_categories'
 
   # disease
-  get 'disease', to: 'diseases#index'
   get 'disease/:id', to: 'diseases#view', as: 'diseases'
 
   # The priority is based upon order of creation: first created -> highest priority.
