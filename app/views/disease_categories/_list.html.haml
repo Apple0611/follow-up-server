@@ -9,7 +9,7 @@
         - if k < @children.count
           - child = @children[k]
           %i.caret.right.icon
-          = link_to child[:name], disease_categories_path(child)
+          = link_to child[:name], disease_category_path(child)
 .ui.hidden.divider
 %h4.ui.header #{@category[:name]}疾病 (#{@diseases.count})
 .ui.divider
