@@ -2,9 +2,6 @@ require 'ruby-pinyin'
 
 class DiseaseCategory < ActiveRecord::Base
 
-  attr_accessor :name, :name_en, :description, :icd, :children_count, :common
-  attr_reader :en_acronym, :name_py, :py_acronym, :parent_id, :depth, :created_at, :updated_at, :viewed
-
   validates :name, :name_en, :en_acronym, :name_py, :py_acronym, presence: {
     message: "分类名称必填"
   }
@@ -15,6 +12,7 @@ class DiseaseCategory < ActiveRecord::Base
   acts_as_nested_set
 
   has_many :diseases
+  has_and_belongs_to_many :departments
 
   def add_to_child_of(parent)
     self.move_to_child_of(parent)
