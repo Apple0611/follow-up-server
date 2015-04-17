@@ -4,6 +4,13 @@
 
 // DiseaseCategories Controller
 body.disease_categories {
+
+  .small_link {
+    font-size: 13px;
+  }
+  .list_header {
+    font-size: 16px;
+  }
   
   // view Action
   >.view {

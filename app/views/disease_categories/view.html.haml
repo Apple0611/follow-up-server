@@ -1,11 +1,26 @@
-= render partial: "layouts/header"
-= render partial: "nav/nav"
+= render "layouts/header"
+= render "nav/nav"
 .intro-box.wrap
   .ui.page.grid
     .sixteen.wide.column
-      %h2.ui.header.title 分类：#{@category[:name]}
+      .left.floated.column
+        %h2.ui.header.title 分类：#{@category[:name]}
+      .right.floated.column
+        #category_edit.ui.small.button
+          %i.edit.icon>
+          编辑
+        .ui.dropdown.labeled.icon.small.button
+          %i.plus.icon
+          添加
+          .menu
+            .item 下级分类
+            .item 疾病
+        .ui.small.button
+          %i.star.icon>
+          收藏
+      .clear-both
       .description
-        = @category[:overview]
+        = @category[:description]
 .ui.divider
 .wrap
   .ui.page.grid
@@ -13,4 +28,5 @@
       = render "disease_categories/filter_department"
     .search-result-box.twelve.wide.column
       = render "disease_categories/list"
+= render "disease_categories/modal"
 = render "layouts/footer"

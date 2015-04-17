@@ -1,0 +1,18 @@
+= form_for @category, html: {class: "ui form"} do |f|
+  .inline.field
+    = f.label :parent_id, "父分类"
+    = f.text_field :parent_id
+  .inline.field
+    = f.label :name, "分类名"
+    = f.text_field :name
+  .inline.field
+    = f.label :name_en, "英文名"
+    = f.text_field :name_en
+  .inline.field
+    = f.label :common, "常见分类"
+    .ui.toggle.checkbox
+      = f.check_box :common, checked: @category[:common]
+  .field
+    = f.label :description, "描述"
+    = f.text_area :description
+  
