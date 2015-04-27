@@ -1,5 +1,5 @@
 class Doctor < User
   belongs_to :department
-  has_many :intern
-  has_many :treatment
+  has_many :interns
+  has_many :treatments
 end
