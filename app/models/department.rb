@@ -7,6 +7,7 @@ class Department < ActiveRecord::Base
   }
 
   has_many :users
+  has_many :doctors
   has_and_belongs_to_many :disease_categories
 
 end
