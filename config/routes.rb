@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get 'home/index'
   get 'search', to: 'home#search'
 
-  # disease_categories
-  get 'category', to: 'disease_categories#index'
-  get 'category/:id', to: 'disease_categories#view', as: 'disease_category'
-  get 'category/:id/children', to: 'disease_categories#children'
+  # categories
+  get 'category', to: 'categories#index'
+  get 'category/:id', to: 'categories#view'
+  get 'category/:id/children', to: 'categories#children'
 
   # disease
   get 'disease/:id', to: 'diseases#view', as: 'diseases'

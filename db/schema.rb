@@ -13,19 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150427085716) do
 
-  create_table "departments", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-  end
-
-  create_table "departments_disease_categories", id: false, force: :cascade do |t|
-    t.integer "department_id",       limit: 4, null: false
-    t.integer "disease_category_id", limit: 4, null: false
-  end
-
-  create_table "disease_categories", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name",           limit: 255
     t.text     "description",    limit: 65535
     t.integer  "parent_id",      limit: 4
@@ -44,23 +32,35 @@ ActiveRecord::Schema.define(version: 20150427085716) do
     t.boolean  "common",         limit: 1
   end
 
-  create_table "diseases", force: :cascade do |t|
-    t.string   "name",                limit: 255
-    t.text     "summary",             limit: 65535
-    t.text     "overview",            limit: 65535
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.string   "name_en",             limit: 255
-    t.string   "en_acronym",          limit: 255
-    t.string   "name_py",             limit: 255
-    t.string   "py_acronym",          limit: 255
-    t.text     "image",               limit: 65535
-    t.string   "alt_name",            limit: 255
-    t.string   "cause",               limit: 255
-    t.integer  "disease_category_id", limit: 4
+  create_table "categories_departments", id: false, force: :cascade do |t|
+    t.integer "department_id", limit: 4, null: false
+    t.integer "category_id",   limit: 4, null: false
   end
 
-  add_index "diseases", ["disease_category_id"], name: "index_diseases_on_disease_category_id", using: :btree
+  create_table "departments", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  create_table "diseases", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "summary",     limit: 65535
+    t.text     "overview",    limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "name_en",     limit: 255
+    t.string   "en_acronym",  limit: 255
+    t.string   "name_py",     limit: 255
+    t.string   "py_acronym",  limit: 255
+    t.text     "image",       limit: 65535
+    t.string   "alt_name",    limit: 255
+    t.string   "cause",       limit: 255
+    t.integer  "category_id", limit: 4
+  end
+
+  add_index "diseases", ["category_id"], name: "index_diseases_on_category_id", using: :btree
 
   create_table "treatments", force: :cascade do |t|
     t.datetime "created_at", null: false

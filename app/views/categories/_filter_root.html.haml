@@ -11,7 +11,7 @@
         = root[:name]
       .active.content
         - root.children.each do |snd|
-          %a.item{href: disease_category_path(snd)}
+          %a.item{href: category_path(snd)}
             .ui.label
               = snd.children.count
             = snd[:name]

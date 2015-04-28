@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :disease_category do
+  factory :category do
     sequence(:name) { |n| "疾病 #{n}" }
     description     "Lorem ipsum"
     sequence(:name_en) { |n| "DiseaseCategoryName #{n}" }

@@ -1,6 +1,6 @@
-class CreateDiseaseCategories < ActiveRecord::Migration
+class CreateCategories < ActiveRecord::Migration
   def change
-    create_table :disease_categories do |t|
+    create_table :categories do |t|
       t.string :name
       t.text :description
       t.integer :parent

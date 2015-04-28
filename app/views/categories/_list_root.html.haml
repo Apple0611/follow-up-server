@@ -4,7 +4,7 @@
     %h4.ui.header.list_header
       #{root[:name]}常见下级分类 (#{common.count})
   .right.floated.column
-    = link_to "查看全部 >>", disease_category_path(root), class: "small_link"
+    = link_to "查看全部 >>", category_path(root), class: "small_link"
   .clear-both
   .ui.divider
   .ui.grid
@@ -16,5 +16,5 @@
           - if k < common.count
             - category = common[k]
             %i.caret.right.icon
-            = link_to category[:name], disease_category_path(category)
+            = link_to category[:name], category_path(category)
   .ui.hidden.divider

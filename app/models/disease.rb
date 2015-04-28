@@ -7,7 +7,7 @@ class Disease < ActiveRecord::Base
     message: "疾病名称必须唯一"
   }
 
-  belongs_to :disease_category
+  belongs_to :category
   has_many :treatments
 
 end

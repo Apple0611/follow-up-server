@@ -4,7 +4,7 @@ class DiseasesController < ApplicationController
 
   def view
     @disease = Disease.find(params[:id].to_i)
-    @category = @disease.disease_category
+    @category = @disease.category
     @ancestors = @category.self_and_ancestors
   end
 

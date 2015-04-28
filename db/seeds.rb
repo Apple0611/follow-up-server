@@ -11,28 +11,28 @@
 
 ActiveRecord::Base.transaction do
 
-  im = DiseaseCategory.create(name: "内科", name_en: "Internal Medicine", common: true)
+  im = Category.create(name: "内科", name_en: "Internal Medicine", common: true)
 
-  cm = DiseaseCategory.create(name: "心血管内科", name_en: "Cardiovascular Medicine", common: true)
+  cm = Category.create(name: "心血管内科", name_en: "Cardiovascular Medicine", common: true)
   cm.add_to_child_of(im)
 
-  nm = DiseaseCategory.create(name: "神经内科", name_en: "Neural Medicine", common: true)
+  nm = Category.create(name: "神经内科", name_en: "Neural Medicine", common: true)
   nm.add_to_child_of(im)
 
-  dim = DiseaseCategory.create(name: "消化内科", name_en: "Digestion Internal Medicine", common: true)
+  dim = Category.create(name: "消化内科", name_en: "Digestion Internal Medicine", common: true)
   dim.add_to_child_of(im)
 
-  rm = DiseaseCategory.create(name: "呼吸内科", name_en: "Respiratory Medicine", common: true)
+  rm = Category.create(name: "呼吸内科", name_en: "Respiratory Medicine", common: true)
   rm.add_to_child_of(im)
 
-  rsti = Disease.create(name: "上呼吸道感染", name_en: "Upper Respiratory Tract Infection", disease_category: rm)
+  rsti = Disease.create(name: "上呼吸道感染", name_en: "Upper Respiratory Tract Infection", category: rm)
 
-  hd = DiseaseCategory.create(name: "心脏疾病", name_en: "Heart Disease", common: true)
+  hd = Category.create(name: "心脏疾病", name_en: "Heart Disease", common: true)
   hd.add_to_child_of(cm)
 
-  vd = DiseaseCategory.create(name: "血管疾病", name_en: "Vascular Disease", common: true)
+  vd = Category.create(name: "血管疾病", name_en: "Vascular Disease", common: true)
   vd.add_to_child_of(cm)
 
-  s = DiseaseCategory.create(name: "外科", name_en: "Surgery", common: true)
+  s = Category.create(name: "外科", name_en: "Surgery", common: true)
 
 end

@@ -4,7 +4,7 @@
       .ui.large.breadcrumb
         = link_to "首页", root_path, class: "section"
         %i.right.chevron.icon.divider
-        - if controller.controller_name ==  "disease_categories"
+        - if controller.controller_name ==  "categories"
           - if action_name == "index"
             .active.section 全部疾病
           - elsif action_name == "view"

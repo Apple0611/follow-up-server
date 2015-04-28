@@ -1,6 +1,6 @@
 require 'ruby-pinyin'
 
-class DiseaseCategory < ActiveRecord::Base
+class Category < ActiveRecord::Base
 
   validates :name, :name_en, :en_acronym, :name_py, :py_acronym, presence: {
     message: "分类名称必填"
@@ -21,7 +21,7 @@ class DiseaseCategory < ActiveRecord::Base
   end
 
   def common
-    DiseaseCategory.where({parent_id: self.id, common: true})
+    Category.where({parent_id: self.id, common: true})
   end
 
   protected
