@@ -10,12 +10,11 @@ Rails.application.routes.draw do
   get 'search', to: 'home#search'
 
   # categories
-  get 'category', to: 'categories#index'
-  get 'category/:id', to: 'categories#view'
-  get 'category/:id/children', to: 'categories#children'
+  resources :categories
+  get 'categories/:id/children', to: 'categories#children'
 
   # disease
-  get 'disease/:id', to: 'diseases#view', as: 'diseases'
+  resources :diseases
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

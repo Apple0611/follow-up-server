@@ -22,4 +22,4 @@
         - if k < @diseases.count
           - disease = @diseases[k]
           %i.first.aid.icon
-          = link_to disease[:name], diseases_path(disease)
+          = link_to disease[:name], disease_path(disease)

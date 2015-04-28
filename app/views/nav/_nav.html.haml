@@ -7,7 +7,7 @@
         - if controller.controller_name ==  "categories"
           - if action_name == "index"
             .active.section 全部疾病
-          - elsif action_name == "view"
+          - elsif action_name == "show"
             = render partial: "nav/ancestors", locals: {name: @category.name}
         - elsif controller.controller_name ==  "diseases"
           = render partial: "nav/ancestors", locals: {name: @disease.name}

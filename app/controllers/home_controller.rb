@@ -2,7 +2,7 @@ class HomeController < ApplicationController
   def index
     @index_top_steps_card = [
       {image: "search-disease-1.png", title: "search_disease", link: "search"},
-      {image: "create-treatment-1.png", title: "create_treatment", link: "category"},
+      {image: "create-treatment-1.png", title: "create_treatment", link: "categories"},
       {image: "create-follow-up.png", title: "create_follow-up", link: ""},
       {image: "statistic-1.png", title: "statistics", link: ""}
     ]

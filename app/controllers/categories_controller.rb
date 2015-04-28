@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
     @roots = Category.roots
   end
 
-  def view
+  def show
     @category = Category.find(params[:id].to_i)
     @children = @category.children.order(py_acronym: :desc)
     @ancestors = @category.ancestors
