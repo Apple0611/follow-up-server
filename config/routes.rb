@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :departments
-  resources :users
   # root
   root 'home#index'
 
@@ -13,8 +11,14 @@ Rails.application.routes.draw do
   resources :categories
   get 'categories/:id/children', to: 'categories#children'
 
-  # disease
+  # diseases
   resources :diseases
+
+  # users
+  resources :users
+
+  # departments
+  resources :departments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
