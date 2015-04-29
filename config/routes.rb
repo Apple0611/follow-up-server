@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   # categories
   resources :categories
-  get 'categories/:id/children', to: 'categories#children'
+  post 'categories/select', to: 'categories#select'
 
   # diseases
   resources :diseases
