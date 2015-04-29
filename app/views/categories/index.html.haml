@@ -3,13 +3,20 @@
 .intro-box.wrap
   .ui.page.grid
     .sixteen.wide.column
-      %h2.ui.header.title 全部疾病
+      .left.floated.column
+        %h2.ui.header.title 全部疾病
+      .right.floated.column
+        #category_edit.ui.small.button
+          %i.plus.icon>
+          添加分类
+      .clear-both
 .ui.divider
 .wrap
   .ui.page.grid
     .four.wide.column
-      = render "categories/filter_root"
-      = render "categories/filter_department"
+      = render "filter_root"
+      = render "filter_department"
     .search-result-box.twelve.wide.column
-      = render "categories/list_root"
+      = render "list_root"
+= render partial: "modal"
 = render "layouts/footer"

@@ -25,7 +25,7 @@ ready = ->
     span = that.parent().parent()
     span.nextAll().remove()
     span.after(loading)
-    $.post 'select', {id: that.val()}, (categories) ->
+    $.post '/categories/select', {id: that.val()}, (categories) ->
       if categories.length > 0
         html = """<span><i class="right chevron icon divider"></i>"""
         html += """<select name="category[parent_select]" id="category_parent_select" class: "ui dropdown">"""
