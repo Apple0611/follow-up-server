@@ -4,14 +4,15 @@ class CategoriesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
+    @page_title = "全部疾病"
     @roots = Category.roots
     @category = Category.new
   end
 
   def show
     @category = Category.find(params[:id].to_i)
+    @page_title = @category.name
     @children = @category.children.order(py_acronym: :desc)
-
     @diseases = @category.diseases
   end
 

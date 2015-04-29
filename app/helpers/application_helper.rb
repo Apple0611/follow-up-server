@@ -8,4 +8,9 @@ module ApplicationHelper
     end
   end
 
+  def render_page_title
+    site_name = Setting.app_name
+    title = @page_title ? "#{@page_title} | #{site_name}" : site_name rescue "SITE_NAME"
+  end
+
 end

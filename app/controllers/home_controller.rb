@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @page_title = "首页"
     @index_top_steps_card = [
       {image: "search-disease-1.png", title: "search_disease", link: "search"},
       {image: "create-treatment-1.png", title: "create_treatment", link: "categories"},
