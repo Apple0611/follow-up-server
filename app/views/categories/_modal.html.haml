@@ -1,11 +1,11 @@
 .ui.modal
   %i.close.icon
   .header
-    Modal Title
+    编辑分类：#{@category.name}
   .content
     = render 'categories/form'
   .actions
-    .ui.primary.button 
+    .ui.primary.button#category_save_button
       %i.save.icon
       保存
     .ui.button 取消
