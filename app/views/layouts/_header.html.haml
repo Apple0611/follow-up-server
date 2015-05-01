@@ -2,23 +2,31 @@
   .ui.page.grid
     .sixteen.wide.column
       .ui.secondary.menu
-        %a.active.item{:href => "/"}
+        %a.active.item{href: "/"}
           %i.home.icon
           = t('home')
         - unless defined? hide_search
           .item
             .ui.icon.input
-              %input{:placeholder => t('search'), :type => "text"}
+              %input{placeholder: t('search'), type: "text"}
               %i.search.link.icon
         .right.menu
-          %a.item
-            %i.mail.icon
-            = t('message')
-            .floating.ui.teal.circular.label
-              5
-          %a.item
-            %i.user.icon
-            = t('personal')
-          %a.item
-            %i.log.out.icon
-            = t('logout')
+          - if logged_in?
+            %a.item
+              %i.mail.icon
+              = t('message')
+              .floating.ui.teal.circular.label
+                5
+            %a.item
+              %i.user.icon
+              = t('personal')
+            %a.item
+              %i.log.out.icon
+              = t('logout')
+          - else
+            %a.item{href: "/signin"}
+              %i.sign.in.icon
+              登录
+            %a.item{href: "/signup"}
+              %i.add.user.icon
+              注册
