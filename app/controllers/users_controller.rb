@@ -14,11 +14,16 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
+    @page_title = "注册"
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+  end
+
+  def signin
+    @page_title = "登录"
   end
 
   # POST /users

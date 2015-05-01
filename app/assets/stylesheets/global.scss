@@ -3,11 +3,23 @@ body {
    font-family: Avenir, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif !important;
  }
 
+.display-none {
+  display: none;
+}
+
 .wrap {
   padding-left: 80px;
   padding-right: 80px;
   margin-top: 30px;
  }
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
 
 .clear-both {
   clear: both;

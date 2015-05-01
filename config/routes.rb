@@ -15,8 +15,9 @@ Rails.application.routes.draw do
   resources :diseases
 
   # users
-  get 'users/register', to: 'users#new'
   resources :users
+  get 'signup', to: 'users#new'
+  get 'signin', to: 'users#signin'
 
   # departments
   resources :departments

@@ -1,0 +1,60 @@
+.sign-box.wrap
+  .ui.page.grid
+    .eight.wide.centered.column
+      .ui.warning.form.segment
+        .ui.center.aligned.page.grid
+          .row
+            - case action_name
+            - when "signin"
+              .ui.buttons
+                .ui.primary.button 登录
+                .or
+                %a{href: "signup"}
+                  .ui.button 注册
+            - when "new"
+              .ui.buttons
+                %a{href: "signin"}
+                  .ui.button 登录
+                .or
+                .ui.positive.button 注册
+        .ui.hidden.warning.message
+          %i.close.icon
+          Error Message
+        .form-area
+          .field
+            .ui.large.icon.input
+              %input{placeholder:"邮箱或电话号码", type: "text"}
+              %i.circular.mail.icon
+          .field
+            .ui.large.icon.input
+              %input{placeholder: "密码", type:"password"}
+              %i.circular.lock.icon
+          - case action_name
+          - when "signin"
+            .two.fields
+              .inline.field
+                .ui.checkbox
+                  %input{type: "checkbox", checked: "checked"}
+                    %label 保持登录状态
+              .inline.field
+                %a.float-right{href: "signup"}
+                  忘记密码
+            .ui.large.fluid.primary.submit.button 登录
+          - when "new"
+            .inline.field
+              .ui.checkbox
+                %input{type: "checkbox", checked: "checked"}
+                  %label 我已阅读并同意服务条款
+            .ui.large.fluid.positive.submit.button 注册
+        .ui.horizontal.divider
+          通过以下方式直接登录
+        .ui.center.aligned.page.grid
+          .row
+            .ui.circular.facebook.icon.button
+              %i.facebook.icon
+            .ui.circular.twitter.icon.button
+              %i.twitter.icon
+            .ui.circular.linkedin.icon.button
+              %i.linkedin.icon
+            .ui.circular.google.plus.icon.button
+              %i.google.plus.icon
