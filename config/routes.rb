@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   # users
   resources :users
+  resources :user_sessions
   get 'signup', to: 'users#new'
   get 'signin', to: 'users#signin'
 

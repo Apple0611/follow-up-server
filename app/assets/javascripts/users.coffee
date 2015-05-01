@@ -4,6 +4,7 @@
 # 
 
 ready = ->
+  $('.pointing.menu .item').tab()
   $('.message .close').on 'click', () ->
     $(this).closest('.message').fadeOut()
 
