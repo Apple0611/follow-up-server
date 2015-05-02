@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
       render 'signin'
 
     when "POST"
-      if @user = login(params[:email], params[:password])
+      if @user = login(params[:email], params[:password], params[:remember])
         redirect_back_or_to(:root, notice: '登录成功')
       else
         flash.now[:alert] = '用户名或密码错误！'
