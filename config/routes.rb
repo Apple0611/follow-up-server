@@ -17,8 +17,11 @@ Rails.application.routes.draw do
   # users
   resources :users
   resources :user_sessions
-  get 'signup', to: 'users#new'
-  get 'signin', to: 'users#signin'
+  get 'signup', to: 'users#create'
+  post 'signup', to: 'users#create'
+  get 'signin', to: 'user_sessions#create'
+  post 'signin', to: 'user_sessions#create'
+  get 'signout', to: 'user_sessions#destroy'
 
   # departments
   resources :departments

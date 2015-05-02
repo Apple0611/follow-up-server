@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
   authenticates_with_sorcery!
 
-  validates :password, length: { minimum: 3 }
-  validates :password, confirmation: {
-    message: "确认密码必须和密码一致"
+  validates :email, uniqueness: {
+    message: "此邮箱或电话号码已注册"
   }
-  validates :password_confirmation, presence: {
-    message: "确认密码必须输入"
+  validates :password, length: {
+    in: 6..20,
+    too_short: "密码至少需6位",
+    too_long: "密码至多20位"
   }
-
-  validates :email, uniqueness: true
+  validates :term, acceptance: {
+    message: "必须同意服务条款"
+  }
 end

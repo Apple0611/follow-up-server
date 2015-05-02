@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body.users > .new, 
-body.users > .signin {
+body.user_sessions > .create, 
+body.users > .create {
 
   .sign-guide {
     font-size: 16px;
@@ -50,21 +50,17 @@ body.users > .signin {
 
 }
 
-body.users {
-
-  >.signin {
+body.user_sessions > .create {
   
-    .qr-area {
-      padding: 30px 0 30px 0;
-    }
+  .qr-area {
+    padding: 30px 0 30px 0;
+  }
 
-    .qr-image {
-      width: 150px;
-      height: 150px;
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      #margin-bottom: 10px;
-    }
-
+  .qr-image {
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    #margin-bottom: 10px;
   }
 
 }
