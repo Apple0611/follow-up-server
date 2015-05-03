@@ -41,6 +41,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def activate
+    if (@user = User.load_from_activation_token(params[:id]))
+      @user.activate!
+      redirect_to(:root, notice: 'User was successfully activated.')
+    else
+      not_authenticated
+    end
+  end
+
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update

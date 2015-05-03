@@ -15,10 +15,14 @@ Rails.application.routes.draw do
   resources :diseases
 
   # users
-  resources :users
-  resources :user_sessions
+  resources :users do
+    member do
+      get :activate
+    end
+  end
   get 'signup', to: 'users#create'
   post 'signup', to: 'users#create'
+  resources :user_sessions
   get 'signin', to: 'user_sessions#create'
   post 'signin', to: 'user_sessions#create'
   get 'signout', to: 'user_sessions#destroy'
