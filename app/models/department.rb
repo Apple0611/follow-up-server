@@ -1,5 +1,5 @@
 class Department < ActiveRecord::Base
-  validates :name, {
+  validates :name, presence: {
     message: "科室名称必填"
   }
   validates :name, uniqueness: {
