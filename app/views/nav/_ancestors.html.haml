@@ -1,4 +1,4 @@
-= link_to "全部疾病", {controller: "categories", action: "index"}, class: "section"
+= link_to "全部分类", {controller: "categories", action: "index"}, class: "section"
 - @category.ancestors.each do |ancestor|
   %i.right.chevron.icon.divider
   = link_to ancestor[:name], category_path(ancestor), class: "section"

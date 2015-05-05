@@ -6,7 +6,7 @@
         %i.right.chevron.icon.divider
         - if controller.controller_name ==  "categories"
           - if action_name == "index"
-            .active.section 全部疾病
+            .active.section 全部分类
           - elsif action_name == "show"
             = render partial: "nav/ancestors", locals: {name: @category.name}
         - elsif controller.controller_name ==  "diseases"

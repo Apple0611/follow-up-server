@@ -11,28 +11,47 @@
 
 ActiveRecord::Base.transaction do
 
-  im = Category.create(name: "内科", name_en: "Internal Medicine", common: true)
+  a = Category.create(name: "头部疾病")
+  aa = Department.create(name: "神经外科")
+  aa.add_to_child_of(a)
+  ab = Department.create(name: "神经内科")
+  ab.add_to_child_of(a)
 
-  cm = Category.create(name: "心血管内科", name_en: "Cardiovascular Medicine", common: true)
-  cm.add_to_child_of(im)
+  b = Category.create(name: "眼部疾病")
+  ba = Department.create(name: "眼科")
+  ba.add_to_child_of(b)
 
-  nm = Category.create(name: "神经内科", name_en: "Neural Medicine", common: true)
-  nm.add_to_child_of(im)
+  c = Category.create(name: "耳鼻喉-头颈疾病")
+  d = Category.create(name: "甲状腺疾病")
+  e = Category.create(name: "食道疾病")
+  f = Category.create(name: "肺、呼吸道疾病")
+  f = Category.create(name: "心脏、血管疾病")
+  f = Category.create(name: "乳腺疾病")
+  f = Category.create(name: "肝、胆、胰腺疾病")
+  f = Category.create(name: "胃肠道疾病")
 
-  dim = Category.create(name: "消化内科", name_en: "Digestion Internal Medicine", common: true)
-  dim.add_to_child_of(im)
+  g = Category.create(name: "肾脏、生殖系统疾病")
+  ga = Department.create(name: "泌尿外科")
+  ga.add_to_child_of(g)
+  gb = Department.create(name: "肾脏内科")
+  gb.add_to_child_of(g)
 
-  rm = Category.create(name: "呼吸内科", name_en: "Respiratory Medicine", common: true)
-  rm.add_to_child_of(im)
-
-  rsti = Disease.create(name: "上呼吸道感染", name_en: "Upper Respiratory Tract Infection", category: rm)
-
-  hd = Category.create(name: "心脏疾病", name_en: "Heart Disease", common: true)
-  hd.add_to_child_of(cm)
-
-  vd = Category.create(name: "血管疾病", name_en: "Vascular Disease", common: true)
-  vd.add_to_child_of(cm)
-
-  s = Category.create(name: "外科", name_en: "Surgery", common: true)
-
+  h = Category.create(name: "血液疾病")
+  i = Category.create(name: "骨骼、关节疾病")
+  j = Category.create(name: "皮肤疾病")
+  k = Category.create(name: "内分泌代谢疾病")
+  l = Category.create(name: "风湿免疫疾病")
+  m = Category.create(name: "精神、心理疾病")
+  n = Category.create(name: "传染、感染性疾病")
+  o = Category.create(name: "疼痛治疗")
+  p = Category.create(name: "中西医结合治疗")
+  q = Category.create(name: "老年医学")
+  r = Category.create(name: "肿瘤疾病")
+  s = Category.create(name: "儿童外科（14周岁以下）")
+  t = Category.create(name: "睡眠疾病")
+  u = Category.create(name: "遗传咨询")
+  v = Category.create(name: "营养咨询")
+  w = Category.create(name: "麻醉咨询")
+  x = Category.create(name: "普通内科")
+  y = Category.create(name: "疾病分诊")
 end

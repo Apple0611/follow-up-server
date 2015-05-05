@@ -1,25 +1,16 @@
-%h4.ui.header #{@category[:name]}下级分类 (#{@children.count})
+%h4.ui.header #{@category[:name]}下级科室 (#{@departments.count})
 .ui.divider
-.ui.grid 
-  - count_per_column = (@children.count + 3) / 4
-  - for i in 0...4
-    .four.wide.column
-      - for j in 0...count_per_column
-        - k = i * count_per_column + j
-        - if k < @children.count
-          - child = @children[k]
-          %i.caret.right.icon
-          = link_to child[:name], category_path(child)
-.ui.hidden.divider
-%h4.ui.header #{@category[:name]}疾病 (#{@diseases.count})
-.ui.divider
-.ui.grid 
-  - count_per_column = (@diseases.count + 3) / 4
-  - for i in 0...4
-    .four.wide.column
-      - for j in 0...count_per_column
-        - k = i * count_per_column + j
-        - if k < @diseases.count
-          - disease = @diseases[k]
-          %i.first.aid.icon
-          = link_to disease[:name], disease_path(disease)
+.ui.grid
+  - column_count = 3
+  - count_per_column = (@departments.count + column_count - 1) / column_count
+  - for i in 0...column_count
+    .five.wide.column
+      .ui.list
+        - for j in 0...count_per_column
+          - k = j * column_count + i
+          - if k < @departments.count
+            - department = @departments[k]
+            .item.category-item
+              %i.caret.right.icon
+              .content
+                = link_to department[:name], department_path(department), class: "header"

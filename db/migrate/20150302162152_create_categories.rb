@@ -3,11 +3,8 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.string :name
       t.text :description
-      t.integer :parent
-      t.integer :level
-      t.boolean :is_active
-      t.boolean :is_empty
-      t.boolean :is_bottom
+      t.string :name_py
+      t.string :py_abbr
 
       t.timestamps null: false
     end

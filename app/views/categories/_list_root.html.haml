@@ -1,20 +1,14 @@
-- @roots.each do |root|
-  - common = root.common
-  .left.floated.column
-    %h4.ui.header.list_header
-      #{root[:name]}常见下级分类 (#{common.count})
-  .right.floated.column
-    = link_to "查看全部 >>", category_path(root), class: "small_link"
-  .clear-both
-  .ui.divider
-  .ui.grid
-    - count_per_column = (common.count + 3) / 4
-    - for i in 0...4
-      .four.wide.column
+.ui.grid
+  - column_count = 3
+  - count_per_column = (@roots.count + column_count - 1) / column_count
+  - for i in 0...column_count
+    .five.wide.column
+      .ui.list
         - for j in 0...count_per_column
-          - k = j * 4 + i
-          - if k < common.count
-            - category = common[k]
-            %i.caret.right.icon
-            = link_to category[:name], category_path(category)
-  .ui.hidden.divider
+          - k = j * column_count + i
+          - if k < @roots.count
+            - category = @roots[k]
+            .item.category-item
+              %i.caret.right.icon
+              .content
+                = link_to category[:name], category_path(category), class: "header"

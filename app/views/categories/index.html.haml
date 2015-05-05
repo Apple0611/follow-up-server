@@ -4,7 +4,7 @@
   .ui.page.grid
     .sixteen.wide.column
       .left.floated.column
-        %h2.ui.header.title 全部疾病
+        %h2.ui.header.title 全部分类
       .right.floated.column
         #category_edit.ui.small.button
           %i.plus.icon>
@@ -14,8 +14,8 @@
 .wrap
   .ui.page.grid
     .four.wide.column
-      = render "filter_root"
+      = render "sorter_root"
     .search-result-box.twelve.wide.column
       = render "list_root"
-= render partial: "modal"
+= render "modal"
 = render "layouts/footer"
