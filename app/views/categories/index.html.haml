@@ -1,5 +1,5 @@
-= render partial: "layouts/header"
-= render partial: "nav/nav"
+= render "layouts/header"
+= render "nav/nav"
 .intro-box.wrap
   .ui.page.grid
     .sixteen.wide.column
@@ -14,8 +14,8 @@
 .wrap
   .ui.page.grid
     .four.wide.column
-      = render "sorter_root"
+      = render "common_sorter"
     .search-result-box.twelve.wide.column
-      = render "list_root"
-= render "modal"
+      = render "category_list_index"
+= render "category_modal"
 = render "layouts/footer"

@@ -1,8 +1,0 @@
-%h3.ui.header 筛选科室
-.ui.fluid.vertical.secondary.menu
-  %a.active.item
-    全部
-  - @children.each do |child|
-    - child.departments.each do |dep|
-      %a.item
-        = dep.name

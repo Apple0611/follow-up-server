@@ -1,4 +1,5 @@
 class Department < Category
+
   validates :name, presence: {
     message: "科室名称必填"
   }

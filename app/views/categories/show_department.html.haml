@@ -1,0 +1,29 @@
+= render "layouts/header"
+= render "nav/nav"
+.intro-box.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      .left.floated.column
+        %h2.ui.header.title 科室：#{@department[:name]}
+      .right.floated.column
+        #category_edit.ui.small.button
+          %i.edit.icon>
+          编辑
+        .ui.dropdown.labeled.icon.small.button
+          %i.plus.icon
+          添加
+          .menu
+            .item 疾病
+        .ui.small.button
+          %i.star.icon>
+          收藏
+      .clear-both
+      .description
+        = @department[:description]
+.ui.divider
+.wrap
+  .ui.page.grid
+    .four.wide.column
+      = render "department_doctor"
+    .twelve.wide.column
+= render "layouts/footer"

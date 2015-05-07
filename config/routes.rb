@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # categories
   resources :categories
+  resources :departments, controller: 'categories'
   post 'categories/select', to: 'categories#select'
 
   # diseases
@@ -26,9 +27,6 @@ Rails.application.routes.draw do
   get 'signin', to: 'user_sessions#create'
   post 'signin', to: 'user_sessions#create'
   get 'signout', to: 'user_sessions#destroy'
-
-  # departments
-  resources :departments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

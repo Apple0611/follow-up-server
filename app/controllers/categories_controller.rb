@@ -12,7 +12,14 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id].to_i)
     @page_title = @category.name
-    @departments = @category.departments
+    if @category.type == "Department"
+      @department = @category.becomes(Department)
+      @diseases = @department.diseases
+      render 'show_department'
+    else
+      @departments = @category.departments
+      render 'show_category'
+    end
   end
 
   def select

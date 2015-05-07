@@ -14,7 +14,6 @@
           添加
           .menu
             .item 下级分类
-            .item 疾病
         .ui.small.button
           %i.star.icon>
           收藏
@@ -25,8 +24,8 @@
 .wrap
   .ui.page.grid
     .four.wide.column
-      = render "sorter_root"
-    .search-result-box.twelve.wide.column
-      = render "list"
-= render "modal"
+      = render "category_sorter"
+    .twelve.wide.column
+      = render "category_list"
+= render "category_modal"
 = render "layouts/footer"
