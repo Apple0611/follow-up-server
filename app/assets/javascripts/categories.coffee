@@ -14,6 +14,7 @@ ready = ->
   loading = $('<i class="spinner loading icon"></i>')
   save = $('#category_save_button')
 
+  ###
   selects.change ->
     selecter($(this), true)
 
@@ -38,6 +39,7 @@ ready = ->
         new_node.delegate 'select', 'change', selecter
       parent_id.val(that.val())
       loading.remove()
+  ###
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
