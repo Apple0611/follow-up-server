@@ -14,10 +14,12 @@ class CategoriesController < ApplicationController
     @page_title = @category.name
     if @category.type == "Department"
       @department = @category.becomes(Department)
+      @ancestors = @department.ancestors
       @diseases = @department.diseases
       render 'show_department'
     else
       @departments = @category.departments
+      @ancestors = @category.ancestors
       render 'show_category'
     end
   end

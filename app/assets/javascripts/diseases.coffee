@@ -3,7 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $('.tabular.menu .item').tab()
+  $('.tabular.menu .item').tab
+    history: true
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

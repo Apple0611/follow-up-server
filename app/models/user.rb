@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  ROLES = %i[admin manager doctor intern patient banned]
+  
   authenticates_with_sorcery!
 
   validates :email, uniqueness: {

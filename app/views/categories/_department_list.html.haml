@@ -1,15 +1,16 @@
 %h3.ui.header 亚专业或疾病
 .ui.items
-  - 5.times do
+  - @diseases.each do |disease|
     .item
       .image
         %img{:src => "/images/wireframe/image.png"}
       .content
         %h3
-          %a.header Header
+          = link_to disease[:name], disease_path(disease), class: "header"
         .meate
           %span Description
         .description
+          = disease.summary
           %img{class: "ui wireframe image", src: "/images/wireframe/short-paragraph.png"}
         .extra
           Additional Details

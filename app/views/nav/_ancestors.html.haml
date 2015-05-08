@@ -1,5 +1,5 @@
 = link_to "全部分类", {controller: "categories", action: "index"}, class: "section"
-- @category.ancestors.each do |ancestor|
+- @ancestors.each do |ancestor|
   %i.right.chevron.icon.divider
   = link_to ancestor[:name], category_path(ancestor), class: "section"
 %i.right.chevron.icon.divider

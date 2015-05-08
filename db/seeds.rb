@@ -33,6 +33,21 @@ ActiveRecord::Base.transaction do
   g = Category.create(name: "肾脏、生殖系统疾病")
   ga = Department.create(name: "泌尿外科")
   ga.add_to_child_of(g)
+  gaa = Disease.create(name: "泌尿外科", department: ga)
+
+  20.times do |i|
+    Treatment.create(name: "泌尿外科治疗方案#{i}", description: "泌尿外科治疗方案详细描述#{i}", disease: gaa)
+  end
+
+  Disease.create(name: "肾移植", department: ga)
+  Disease.create(name: "泌尿肾移植", department: ga)
+  Disease.create(name: "泌尿肿瘤", department: ga)
+  Disease.create(name: "肿瘤/腔道微创治疗/男科学", department: ga)
+  Disease.create(name: "妇科泌尿/神经泌尿", department: ga)
+  Disease.create(name: "泌尿系结石", department: ga)
+  Disease.create(name: "泌尿系结石/尿道狭窄", department: ga)
+  Disease.create(name: "泌尿外科普通门诊", department: ga)
+
   gb = Department.create(name: "肾脏内科")
   gb.add_to_child_of(g)
 

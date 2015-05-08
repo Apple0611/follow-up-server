@@ -30,6 +30,8 @@ gem 'awesome_nested_set', '~> 3.0.2'
 gem 'ruby-pinyin', '~> 0.4.5'
 gem 'sorcery', '~> 0.9.1'
 gem 'settingslogic', '~> 2.0.9'
+gem 'cancancan', '~> 1.10.1'
+gem 'will_paginate', '~> 3.0.7'
 
 #source 'https://rails-assets.org' do
 #  gem 'rails-assets-semantic'

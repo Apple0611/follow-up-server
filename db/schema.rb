@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150507082614) do
+ActiveRecord::Schema.define(version: 20150508054331) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -50,10 +50,12 @@ ActiveRecord::Schema.define(version: 20150507082614) do
   add_index "diseases", ["department_id"], name: "index_diseases_on_department_id", using: :btree
 
   create_table "treatments", force: :cascade do |t|
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "disease_id", limit: 4
-    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "disease_id",  limit: 4
+    t.integer  "user_id",     limit: 4
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
   end
 
   add_index "treatments", ["disease_id"], name: "index_treatments_on_disease_id", using: :btree
@@ -74,6 +76,7 @@ ActiveRecord::Schema.define(version: 20150507082614) do
     t.string   "type",                         limit: 255
     t.integer  "treatment_id",                 limit: 4
     t.integer  "docotr_id",                    limit: 4
+    t.string   "role",                         limit: 255
   end
 
   add_index "users", ["activation_token"], name: "index_users_on_activation_token", using: :btree

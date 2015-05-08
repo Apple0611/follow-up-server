@@ -4,8 +4,10 @@ class DiseasesController < ApplicationController
 
   def show
     @disease = Disease.find(params[:id].to_i)
-    @category = @disease.category
-    @ancestors = @category.self_and_ancestors
+    @page_title = @disease.name
+    @department = @disease.department
+    @ancestors = @department.self_and_ancestors
+    @treatments = @disease.treatments.paginate(page: params[:page])
   end
 
   private

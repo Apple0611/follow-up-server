@@ -4,9 +4,9 @@
   .ui.page.grid
     .sixteen.wide.column
       .ui.tabular.menu
-        %a.active.item{"data-tab" => "first"} 疾病详情
-        %a.item{"data-tab" => "second"} 治疗方案
-      .ui.active.tab{"data-tab" => "first"}
+        %a.active.item{"data-tab" => "disease"} 疾病详情
+        %a.item{"data-tab" => "treatments"} 治疗方案
+      .ui.active.tab{"data-tab" => "disease"}
         %article.tab-content
           %section.row.header
             .left.floated.column.title
@@ -39,15 +39,19 @@
                 %tbody
                   %tr
                     %td.bold 别称
-                    %td #{@disease.alt_name}
+                    %td
+                      = @disease.alt_name
                   %tr
                     %td.bold 英文名称
-                    %td #{@disease.name_en}
+                    %td
+                      = @disease.name_en
                   %tr
                     %td.bold 就诊科室
-                    %td 呼吸内科
+                    %td 
+                      = link_to @department[:name], department_path(@department)
                   %tr
                     %td.bold 常见病因
-                    %td #{@disease.cause}
-      = render "diseases/treatment"
+                    %td
+                      = @disease.cause
+      = render "treatment"
 = render "layouts/footer"

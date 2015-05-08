@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require history
 //= require semantic
 //= require_tree .
 //= require turbolinks
