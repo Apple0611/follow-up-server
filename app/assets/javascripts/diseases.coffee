@@ -3,8 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $('.tabular.menu .item').tab
-    history: true
+  sTab = location.hash.substring 2
+  $('.diseases>.show .tabular.menu .item').tab
+    history: true,
+    cache: false
 
 $(document).ready(ready)
-$(document).on('page:load', ready)

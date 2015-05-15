@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # diseases
   resources :diseases
+  get 'diseases/:id/page/:page', to: 'diseases#show'
 
   # users
   resources :users do

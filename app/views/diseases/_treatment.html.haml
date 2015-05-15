@@ -17,7 +17,7 @@
           黄中力
     .twelve.wide.column
       .left.floated.column
-        %h3.ui.header 一共 15 条结果
+        %h3.ui.header 一共 #{@treatments.count} 条结果
       .right.floated.column
         .ui.primary.button
           %i.plus.icon>
@@ -36,4 +36,4 @@
                   = treatment.description
           .ui.divider
         .pagination-box
-          = will_paginate @treatments, class: 'ui borderless pagination menu'
+          = will_paginate @treatments, class: 'ui borderless pagination menu', fragment: 'treatments'
