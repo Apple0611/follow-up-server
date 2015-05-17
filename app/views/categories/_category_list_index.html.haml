@@ -1,12 +1,12 @@
 .ui.grid
   - column_count = 3
-  - count_per_column = (@roots.count + column_count - 1) / column_count
+  - count_per_column = (@roots.length + column_count - 1) / column_count
   - for i in 0...column_count
     .five.wide.column
       .ui.list
         - for j in 0...count_per_column
           - k = j * column_count + i
-          - if k < @roots.count
+          - if k < @roots.length
             - category = @roots[k]
             .item.category-item
               %i.caret.right.icon
