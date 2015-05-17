@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   
   authenticates_with_sorcery!
 
+  validates :email, presence: {
+    message: "邮箱或电话号码不能为空"
+  }
+
   validates :email, uniqueness: {
     message: "此邮箱或电话号码已注册"
   }
