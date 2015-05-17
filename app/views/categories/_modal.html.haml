@@ -6,7 +6,7 @@
     - else
       编辑分类：#{@category.name}
   .content
-    = render 'category_form'
+    = render 'form'
   .actions
     .ui.primary.button#category_save_button
       - if @category.id.nil?

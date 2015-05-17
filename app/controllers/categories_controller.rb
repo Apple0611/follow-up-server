@@ -16,11 +16,11 @@ class CategoriesController < ApplicationController
       @department = @category.becomes(Department)
       @ancestors = @department.ancestors
       @diseases = @department.diseases
-      render 'show_department'
+      render 'department/show'
     else
       @departments = @category.departments
       @ancestors = @category.ancestors
-      render 'show_category'
+      render 'show'
     end
   end
 
