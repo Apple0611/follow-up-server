@@ -14,6 +14,8 @@ defaults: &defaults
   faye_server: "http://127.0.0.1:8080/faye"
   faye_client_url: "http://127.0.0.1:8080/faye"
   faye_token: "123456"
+  hashid_token: "MVwtM6d6vxxP30BdgJw6cipJUGmNJP2adTi+4g13CqI="
+  hashid_length: 8
   github_token: "207bd3415f6f42bcf8da"
   github_secret: "8d51636e1325cd4a0af78efe567a35f29d42096d"
   google_custom_search_id: "016658237367474087615:WMX464284035"

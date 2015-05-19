@@ -1,5 +1,7 @@
 module ApplicationHelper
 
+  hashids = Hashids.new(Setting.hashid_token, Setting.hashid_length)
+
   def output_with_nil_handler(object, default)
     if object.nil?
       default
