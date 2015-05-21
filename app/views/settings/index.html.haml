@@ -1,0 +1,14 @@
+= render "layouts/header"
+= render "nav/direct"
+.settings-box.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      .ui.tabular.menu
+        %a.active.item{"data-tab" => "personal"} 个人资料
+        %a.item{"data-tab" => "password"} 修改密码
+        %a.item{"data-tab" => "intern"} 实习医生管理
+      .ui.active.tab{"data-tab" => "personal"}
+        = render "form_personal"
+      .ui.tab{"data-tab" => "password"}
+        = render "form_password"
+= render "layouts/footer"

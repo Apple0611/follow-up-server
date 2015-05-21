@@ -25,9 +25,12 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#create'
   post 'signup', to: 'users#create'
   resources :user_sessions
-  get 'signin', to: 'user_sessions#create'
+  get 'signin', to: 'user_sessions#create', as: 'login_path'
   post 'signin', to: 'user_sessions#create'
   get 'signout', to: 'user_sessions#destroy'
+
+  # settings
+  get 'settings', to: 'settings#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,0 +1,15 @@
+body.settings {
+  >.index {
+    .settings-box {
+      .form-area {
+        padding: 30px;
+        .wide-input {
+          width: 400px;
+        }
+        input[type='submit'] {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}

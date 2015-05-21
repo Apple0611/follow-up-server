@@ -1,0 +1,8 @@
+.nav-box.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      .ui.large.breadcrumb
+        = link_to "首页", root_path, class: "section"
+        %i.right.chevron.icon.divider
+        .active.section
+          = @page_title

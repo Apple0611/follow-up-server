@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
-  ROLES = %i[admin manager doctor intern patient banned]
-  
+
   authenticates_with_sorcery!
+
+  ROLES = %w[admin manager doctor intern patient banned]
+  def role?(base_role)
+    ROLES.index(base_role.to_s) <= ROLES.index(role)
+  end
 
   validates :email, presence: {
     message: "邮箱或电话号码不能为空"

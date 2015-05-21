@@ -1,7 +1,6 @@
-%h1 Editing user
-
-= render 'form'
-
-= link_to 'Show', @user
-\|
-= link_to 'Back', users_path
+= render "layouts/header"
+.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      = render "form_edit"
+= render "layouts/footer"

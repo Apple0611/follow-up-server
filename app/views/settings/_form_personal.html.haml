@@ -1,0 +1,25 @@
+.form-area.ui.large.form
+  = form_for @user do |f|
+    - if @user.errors.any?
+      .ui.warning.message
+        %i.close.icon
+        保存失败！
+        %ul
+          %li= @user.errors.messages.first[1][0]
+    .field
+      %label 姓名
+      = f.text_field :name, {placeholder:"姓名", type: "text"}
+    .field
+      %label 职称
+      = f.text_field :name, {placeholder:"职称", type: "text"}
+    .fields
+      .eight.wide.inline.field
+        %label 邮箱
+        = f.text_field :email, {placeholder:"邮箱", type: "text", disabled: "disabled"} 
+      .two.wide.field
+        .ui.disabled.button 已验证
+    .field
+      %label 电话
+      = f.text_field :phone, {placeholder:"电话", type: "text", class: "wide-input"}
+      .ui.button 短信验证
+    = f.submit "保存", {class: "ui large positive submit button"}
