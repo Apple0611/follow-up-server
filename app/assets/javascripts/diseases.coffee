@@ -3,7 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  sTab = location.hash.substring 2
   $('.diseases>.show .tabular.menu .item').tab
     history: true,
     cache: false

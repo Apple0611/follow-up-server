@@ -8,18 +8,16 @@
           %li= @user.errors.messages.first[1][0]
     .field
       %label 姓名
-      = f.text_field :name, {placeholder:"姓名", type: "text"}
+      = f.text_field :name, {placeholder:"姓名", type: "text", class: "wide-input"}
     .field
       %label 职称
-      = f.text_field :name, {placeholder:"职称", type: "text"}
-    .fields
-      .eight.wide.inline.field
-        %label 邮箱
-        = f.text_field :email, {placeholder:"邮箱", type: "text", disabled: "disabled"} 
-      .two.wide.field
-        .ui.disabled.button 已验证
+      = f.text_field :name, {placeholder:"职称", type: "text", class: "wide-input"}
+    .field
+      %label 邮箱
+      = f.text_field :email, {placeholder:"邮箱", type: "text", disabled: "disabled", class: "wide-input"}
+      .ui.disabled.large.button 已验证
     .field
       %label 电话
       = f.text_field :phone, {placeholder:"电话", type: "text", class: "wide-input"}
-      .ui.button 短信验证
+      .ui.large.button 短信验证
     = f.submit "保存", {class: "ui large positive submit button"}
