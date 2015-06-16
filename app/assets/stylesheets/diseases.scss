@@ -5,7 +5,7 @@
 // Diseases Controller
 body.diseases {
   
-  // index Action
+  // show Action
   >.show {
 
     .disease-box {
@@ -36,6 +36,9 @@ body.diseases {
       }
       .tab-treatment {
         margin-top: 20px;
+        h3.ui.header {
+          line-height: 50px;
+        }
       }
     }
 

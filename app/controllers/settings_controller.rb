@@ -6,4 +6,8 @@ class SettingsController < ApplicationController
     @page_title = "设置"
     @user = current_user
   end
+
+  def update
+    
+  end
 end
