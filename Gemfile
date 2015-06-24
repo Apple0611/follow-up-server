@@ -63,4 +63,5 @@ group :development, :test do
   gem 'database_cleaner', '~> 1.4.1'
   gem 'better_errors', '~> 2.1.1'
   gem 'meta_request', '~> 0.3.4'
+  gem 'quiet_assets', '~> 1.1.0'
 end
