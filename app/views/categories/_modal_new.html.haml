@@ -1,0 +1,12 @@
+.ui.modal
+  %i.close.icon
+  .header
+    添加分类
+  .content
+    = form_for @category, url: {action: "create"}, html: {class: "ui form category_form"} do |f|
+      = render partial: "form", locals: {f: f}
+  .actions
+    .ui.primary.button#category_save_button
+      %i.plus.icon
+      添加
+    .ui.button 取消

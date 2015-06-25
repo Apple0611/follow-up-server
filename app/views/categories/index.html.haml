@@ -17,5 +17,8 @@
       = render "sorter"
     .search-result-box.twelve.wide.column
       = render "list_index"
-= render "modal"
+- if @category.id.nil?
+  = render "modal_new"
+- else
+  = render "modal_edit"
 = render "layouts/footer"

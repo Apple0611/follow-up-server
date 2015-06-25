@@ -1,0 +1,12 @@
+.ui.modal
+  %i.close.icon
+  .header
+    编辑分类：#{@category.name}
+  .content
+    = form_for @category, url: {action: "update"}, html: {class: "ui form category_form"} do |f|
+      = render partial: "form", locals: {f: f}
+  .actions
+    .ui.primary.button#category_save_button
+      %i.save.icon
+      保存
+    .ui.button 取消

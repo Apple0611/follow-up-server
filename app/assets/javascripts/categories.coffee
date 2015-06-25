@@ -8,13 +8,16 @@ ready = ->
   $('.ui.dropdown').dropdown()
   $('.ui.modal').modal('attach events', '#category_edit', 'show')
   $('.ui.checkbox').checkbox()
+  $('#category_save_button').click ->
+    $('form.category_form').submit()
 
+  ###
   parent_id = $('input[name="category[parent_id]"]')
   selects = $('select[name="parent_select"]')
   loading = $('<i class="spinner loading icon"></i>')
   save = $('#category_save_button')
 
-  ###
+  
   selects.change ->
     selecter($(this), true)
 

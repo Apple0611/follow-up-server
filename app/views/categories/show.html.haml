@@ -6,14 +6,16 @@
       .left.floated.column
         %h2.ui.header.title 分类：#{@category[:name]}
       .right.floated.column
-        #category_edit.ui.small.button
-          %i.edit.icon>
-          编辑
         .ui.dropdown.labeled.icon.small.button
-          %i.plus.icon
-          添加
+          %i.options.icon
+          操作
           .menu
-            .item 科室
+            #category_edit.item 
+              %i.edit.icon &nbsp; 编辑
+            .item 
+              %i.trash.icon &nbsp; 删除
+            .item 
+              %i.plus.icon &nbsp; 添加科室
         .ui.small.button
           %i.star.icon>
           收藏
@@ -27,5 +29,8 @@
       = render "sorter"
     .twelve.wide.column
       = render "list"
-= render "modal"
+- if @category.id.nil?
+  = render "modal_new"
+- else
+  = render "modal_edit"
 = render "layouts/footer"
