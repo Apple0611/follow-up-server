@@ -2,11 +2,12 @@
   %i.close.icon
   .header
     - if @category.id.nil?
-      添加顶级分类
+      添加分类
     - else
       编辑分类：#{@category.name}
   .content
-    = render 'form'
+    = form_for @category, html: {class: "ui form"} do |f|
+      = render partial: "form", locals: {f: f}
   .actions
     .ui.primary.button#category_save_button
       - if @category.id.nil?
