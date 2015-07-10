@@ -4,7 +4,7 @@
 
 ready = ->
   $('.diseases>.show .tabular.menu .item').tab
-    history: true,
+    # history: true,
     cache: false
 
 $(document).ready(ready)

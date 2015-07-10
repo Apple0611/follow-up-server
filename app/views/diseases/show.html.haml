@@ -9,10 +9,10 @@
       .ui.active.tab{"data-tab" => "disease"}
         %article.tab-content
           %section.row.header
-            .left.floated.column.title
+            .float-left.column.title
               %h1.ui.header #{@disease.name}
               .sub.header 最新更新：#{@disease.updated_at}
-            .right.floated.column
+            .float-right.column
               .ui.button
                 %i.edit.icon>
                 编辑

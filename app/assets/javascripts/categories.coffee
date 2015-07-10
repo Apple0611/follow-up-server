@@ -6,7 +6,9 @@ ready = ->
   $('.ui.accordion').accordion()
   $('.tabular.menu .item').tab()
   $('.ui.dropdown').dropdown()
-  $('.ui.modal').modal('attach events', '#category_edit', 'show')
+  $('.ui.modal').modal({
+    blurring: true
+  }).modal('attach events', '#category_edit', 'show')
   $('.ui.checkbox').checkbox()
   $('#category_save_button').click ->
     $('form.category_form').submit()
