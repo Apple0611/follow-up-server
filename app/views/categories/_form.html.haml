@@ -1,14 +1,15 @@
-- unless @category.id.nil?
-  .inline.field
-    = f.label :parent_id, "父分类"
-    = f.hidden_field :parent_id
-    %span
-      = select_tag :parent_select, options_from_collection_for_select(Category.roots, :id, :name), {class: "ui dropdown"}
-    -# Comment
-      - @category.ancestors.each do |ancestor|
-        %span
-          %i.right.chevron.icon.divider
-          = select_tag :parent_select, options_from_collection_for_select(ancestor.children, :id, :name), {class: "ui dropdown"}
+-# Comment
+  - unless @category.id.nil?
+    .inline.field
+      = f.label :parent_id, "父分类"
+      = f.hidden_field :parent_id
+      %span
+        = select_tag :parent_select, options_from_collection_for_select(Category.roots, :id, :name), {class: "ui dropdown"}
+      -# Comment
+        - @category.ancestors.each do |ancestor|
+          %span
+            %i.right.chevron.icon.divider
+            = select_tag :parent_select, options_from_collection_for_select(ancestor.children, :id, :name), {class: "ui dropdown"}
 .inline.field
   = f.label :name, "分类名"
   = f.text_field :name
