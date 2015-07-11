@@ -8,6 +8,7 @@ class Category < ActiveRecord::Base
   validates :name, uniqueness: {
     message: "分类名称必须唯一"
   }
+  validates :name, length: { in: 1..255 }
 
   acts_as_nested_set
 
