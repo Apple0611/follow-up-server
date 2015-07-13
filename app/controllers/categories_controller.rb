@@ -59,6 +59,14 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @category.destroy
+    respond_to do |format|
+      format.html { redirect_to action: :index, notice: 'Category was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   private
   def set_category
     @category = Category.find(params[:id])

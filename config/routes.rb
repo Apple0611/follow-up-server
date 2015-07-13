@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # categories
   resources :categories
   resources :departments, controller: 'categories'
-  post 'categories/select', to: 'categories#select'
+  # post 'categories/select', to: 'categories#select'
 
   # diseases
   resources :diseases

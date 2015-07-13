@@ -12,7 +12,9 @@ ready = ->
   }).modal('attach events', '#category_delete', 'show')
   $('.ui.checkbox').checkbox()
   $('#category_save_button').click ->
-    $('form.category_form').submit()
+    $('form.category_edit_form').submit()
+  $('#category_delete_button').click ->
+    $('form.category_delete_form').submit()
 
   ###
   parent_id = $('input[name="category[parent_id]"]')

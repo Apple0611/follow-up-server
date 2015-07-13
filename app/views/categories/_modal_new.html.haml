@@ -3,7 +3,7 @@
   .header
     添加分类
   .content
-    = form_for @category, url: {action: "create"}, html: {class: "ui form category_form"} do |f|
+    = form_for @category, url: {action: "create"}, html: {class: "ui form category_edit_form"} do |f|
       = render partial: "form", locals: {f: f}
   .actions
     .ui.primary.button#category_save_button

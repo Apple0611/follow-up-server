@@ -5,7 +5,7 @@
     %p
       确认删除分类：#{@category.name}？ 注意，此操作不可恢复
   .actions
-    .ui.red.inverted.button#category_save_button
+    .ui.red.inverted.button#category_delete_button
       %i.trash.icon
-      删除
+      = link_to '删除', @category, method: :delete, style: 'color: inherit'
     .ui.deny.inverted.button 取消
