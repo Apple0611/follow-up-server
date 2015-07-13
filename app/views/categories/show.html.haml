@@ -12,7 +12,7 @@
           .menu
             #category_edit.item 
               %i.edit.icon &nbsp; 编辑
-            .item 
+            #category_delete.item 
               %i.trash.icon &nbsp; 删除
             .item 
               %i.plus.icon &nbsp; 添加科室
@@ -33,4 +33,5 @@
   = render "modal_new"
 - else
   = render "modal_edit"
+  = render "modal_delete"
 = render "layouts/footer"
