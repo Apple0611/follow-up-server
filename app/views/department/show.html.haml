@@ -6,15 +6,9 @@
       .float-left.column
         %h2.ui.header.title 科室：#{@department[:name]}
       .float-right.column
-        #category_edit.ui.small.button
-          %i.edit.icon>
+        = link_to edit_department_path(@department), class: 'ui small button' do
+          %i.edit.icon
           编辑
-        .ui.dropdown.labeled.icon.small.button
-          %i.plus.icon
-          添加
-          .menu
-            .item 疾病
-            .item 医生
         .ui.small.button
           %i.star.icon>
           收藏

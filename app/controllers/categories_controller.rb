@@ -24,6 +24,16 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def dep_edit
+    @category = Category.find(params[:id].to_i)
+    @page_title = "编辑：" + @category.name
+
+    @department = @category.becomes(Department)
+    @ancestors = @department.ancestors
+
+    render 'department/edit'
+  end
+
   def select
     id = params[:id].to_i
     if id == 0

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :treatments
   # root
   root 'home#index'
 
@@ -10,8 +9,11 @@ Rails.application.routes.draw do
 
   # categories
   resources :categories
-  resources :departments, controller: 'categories'
   # post 'categories/select', to: 'categories#select'
+
+  # department
+  get 'departments/:id/edit', to: 'categories#dep_edit'
+  resources :departments, controller: 'categories'
 
   # diseases
   resources :diseases
@@ -32,6 +34,8 @@ Rails.application.routes.draw do
 
   # settings
   get 'settings', to: 'settings#index'
+
+  resources :treatments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
