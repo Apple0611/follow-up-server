@@ -1,0 +1,25 @@
+- if flash[:type]
+  .message-box
+    .ui.page.grid
+      .sixteen.wide.column
+        - case flash[:type]
+        - when 'info'
+          .ui.info.message
+            %i.close.icon
+            .header
+              = flash[:message]
+        - when 'warning'
+          .ui.warning.message
+            %i.close.icon
+            .header
+              = flash[:message]
+        - when 'positive'
+          .ui.positive.message
+            %i.close.icon
+            .header
+              = flash[:message]
+        - when 'negative'
+          .ui.negative.message
+            %i.close.icon
+            .header
+              = flash[:message]
