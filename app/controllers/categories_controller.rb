@@ -60,20 +60,27 @@ class CategoriesController < ApplicationController
   def update
     respond_to do |format|
       if @category.update(category_params)
-        format.html { redirect_to @category, notice: 'Category was successfully updated.' }
+        format.html { redirect_to (@category), flash:{type: 'positive', message: '分类已更新'}}
         format.json { render :show, status: :ok, location: @category }
       else
-        format.html { redirect_to @category}
+        format.html { redirect_to (@category), flash:{type: 'negative', message: '失败：' + @category.errors.messages.first[1][0]}}
         format.json { render json: @category.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    @category.destroy
-    respond_to do |format|
-      format.html { redirect_to ({action: :index}), flash: {type: 'positive', message: '分类已删除'} }
-      format.json { head :no_content }
+    if @category[:children_count] > 0
+      respond_to do |format|
+        format.html { redirect_to (@category), flash: {type: 'negative', message: '分类不为空，不能直接删除'} }
+        format.json { head :no_content }
+      end
+    else
+      @category.destroy
+      respond_to do |format|
+        format.html { redirect_to ({action: :index}), flash: {type: 'positive', message: '分类已删除'} }
+        format.json { head :no_content }
+      end
     end
   end
 
