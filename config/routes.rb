@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # post 'categories/select', to: 'categories#select'
 
   # department
+  get 'departments/new', to: 'categories#dep_new'
   get 'departments/:id/edit', to: 'categories#dep_edit'
   resources :departments, controller: 'categories'
 
