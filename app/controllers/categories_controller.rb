@@ -28,10 +28,11 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id].to_i)
     @page_title = "在分类" + @category.name + "下新建科室"
 
-    @department = @category.becomes(Department)
-    @ancestors = @department.ancestors
+    @department = Department.new
+    @department.category = @category
+    @ancestors = @category.ancestors
 
-    render 'department/edit'
+    render 'department/new'
   end
 
   def dep_edit

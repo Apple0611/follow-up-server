@@ -1,0 +1,26 @@
+= render "layouts/header"
+= render "nav/nav"
+.intro-box.wrap
+  .ui.page.grid
+    .sixteen.wide.column
+      .float-left.column
+        %h2.ui.header.title 
+          %i.small.edit.icon 
+          在分类#{@department[:name]}下新建科室
+      .float-right.column
+        = link_to new_department_path(@department), class: 'ui primary small button' do
+          %i.save.icon
+          保存
+        = link_to category_path(@category), class: 'ui small button' do
+          取消
+      .clear-both
+      .description
+        = @department[:description]
+      .ui.tabular.menu
+        %a.active.item{"data-tab" => "basic"} 基本资料
+        %a.item{"data-tab" => "doctor"} 医生管理
+      .ui.active.tab{"data-tab" => "basic"}
+        = render "department/form_basic"
+      .ui.tab{"data-tab" => "doctor"}
+        = render "department/form_doctor"
+= render "layouts/footer"
