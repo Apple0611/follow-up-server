@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get 'search', to: 'home#search'
 
   # categories
+  get 'categories/:id/dep_new', to: 'categories#dep_new'
   resources :categories
   # post 'categories/select', to: 'categories#select'
 
   # department
-  get 'departments/new', to: 'categories#dep_new'
   get 'departments/:id/edit', to: 'categories#dep_edit'
   resources :departments, controller: 'categories'
 

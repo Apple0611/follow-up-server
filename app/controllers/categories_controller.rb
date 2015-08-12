@@ -26,7 +26,7 @@ class CategoriesController < ApplicationController
 
   def dep_new
     @category = Category.find(params[:id].to_i)
-    @page_title = "编辑：" + @category.name
+    @page_title = "在分类" + @category.name + "下新建科室"
 
     @department = @category.becomes(Department)
     @ancestors = @department.ancestors
