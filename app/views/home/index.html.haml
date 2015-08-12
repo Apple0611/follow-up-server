@@ -2,15 +2,14 @@
 .top-steps.wrap
   .ui.page.grid
     .sixteen.wide.column
-      .ui.four.column.grid
+      .ui.four.column.link.cards
         - @index_top_steps_card.each do |card|
-          .column
-            .ui.fluid.card
-              .image
-                = image_tag "img/" + card[:image]
-              .content
-                %a.header{href: card[:link]}
-                  = t(card[:title])
+          = link_to card[:link], class: 'ui card' do
+            .image
+              = image_tag "img/" + card[:image]
+            .content
+              .header
+                = t(card[:title])
 .search-box.wrap
   .ui.page.grid
     .sixteen.wide.column

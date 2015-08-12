@@ -15,9 +15,8 @@
               %i.edit.icon &nbsp; 编辑
             #category_delete.item 
               %i.trash.icon &nbsp; 删除
-            = link_to "", controller: "categories", action: "dep_new", id: @category, class: "item" do
-              %i.plus.icon
-              添加科室
+            = link_to @category, method: 'dep_new', class: 'item' do
+              %i.plus.icon &nbsp; 添加科室
         .ui.small.button
           %i.star.icon>
           收藏
