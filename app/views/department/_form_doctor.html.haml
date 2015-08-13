@@ -1,0 +1,58 @@
+%table.ui.compact.celled.definition.table
+  %thead.full-width
+    %tr
+      %th
+      %th 姓名
+      %th 专业
+      %th 职称
+      %th 邮箱
+  %tbody
+    %tr
+      %td.collapsing
+        .ui.fitted.checkbox
+          %input{:type => "checkbox"}
+            %label
+      %td 陈宗福
+      %td 泌尿外科
+      %td 三级专家
+      %td test1@test.com
+    %tr
+      %td.collapsing
+        .ui.fitted.checkbox
+          %input{:type => "checkbox"}
+            %label
+      %td 唐科士
+      %td 泌尿外科
+      %td 二级专家
+      %td test1@test.com
+    %tr
+      %td.collapsing
+        .ui.fitted.checkbox
+          %input{:type => "checkbox"}
+            %label
+      %td 黄中力
+      %td 泌尿肾移植
+      %td 主治医师
+      %td test1@test.com
+    %tr.warning
+      %td.collapsing
+        .ui.fitted.checkbox
+          %input{:type => "checkbox"}
+            %label
+      %td 实习生
+      %td 泌尿外科
+      %td 实习生
+      %td test1@test.com
+  %tfoot.full-width
+    %tr
+      %th
+      %th{:colspan => "4"}
+        .ui.right.floated.small.primary.labeled.icon.button
+          %i.add.user.icon
+          添加医生
+        .ui.small.button
+          %i.remove.icon
+          移除选中
+        .ui.small.button
+          %i.trash.icon
+          移除全部
