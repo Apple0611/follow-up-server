@@ -17,12 +17,19 @@
               = t('message')
               .floating.ui.teal.circular.label
                 5
-            %a.item
+            .ui.floating.top.right.pointing.dropdown.link.item
               %i.user.icon
               = t('personal')
-            %a.item{href: "/signout"}
-              %i.log.out.icon
-              = t('logout')
+              .menu
+                .item 
+                  %i.home.icon 
+                  个人主页
+                %a.item{href: "/settings"}
+                  %i.setting.icon 
+                  设置
+                %a.item{href: "/signout"}
+                  %i.sign.out.icon 
+                  退出
           - else
             %a.item{href: "/signin"}
               %i.sign.in.icon
