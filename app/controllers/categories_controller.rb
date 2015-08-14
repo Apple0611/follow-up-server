@@ -35,6 +35,9 @@ class CategoriesController < ApplicationController
     render 'department/new'
   end
 
+  def dep_create
+  end
+
   def dep_edit
     @category = Category.find(params[:id].to_i)
     @page_title = "编辑：" + @category.name
