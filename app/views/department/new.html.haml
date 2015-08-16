@@ -8,7 +8,7 @@
           %i.small.edit.icon 
           在分类#{@category[:name]}下新建科室
       .float-right.column
-        = link_to new_department_path(@department), class: 'ui primary small button' do
+        %a.ui.small.button
           %i.save.icon
           保存
         = link_to category_path(@category), class: 'ui small button' do
