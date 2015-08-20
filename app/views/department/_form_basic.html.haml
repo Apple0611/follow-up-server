@@ -1,5 +1,5 @@
 .ui.large.form.wrap
-  = form_for @department do |f|
+  = form_for @department, url: {action: "dep_create"}, html: {class: "ui form dep_create_basic_form"} do |f|
     .inline.field
       = f.label :name, "科室名"
       = f.text_field :name

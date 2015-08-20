@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
   # department
   get 'departments/:id/edit', to: 'categories#dep_edit'
+  get 'departments/dep_create', to: 'categories#dep_create'
   resources :departments, controller: 'categories'
 
   # diseases
