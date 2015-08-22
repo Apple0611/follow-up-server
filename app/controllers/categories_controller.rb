@@ -30,12 +30,24 @@ class CategoriesController < ApplicationController
 
     @department = Department.new
     @department.category = @category
+    @department.parent_id = @category.id
     @ancestors = @category.ancestors
 
     render 'department/new'
   end
 
   def dep_create
+    @department = Department.create(department_params)
+    @category = Category.find(@department.parent_id)
+    respond_to do |format|
+      if @department.add_to_child_of @category
+        format.html { redirect_to @department, notice: 'Department was successfully created.' }
+        format.json { render :show, status: :created, location: @department }
+      else
+        format.html { redirect_to action: :index}
+        format.json { render json: @department.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def dep_edit
@@ -101,6 +113,10 @@ class CategoriesController < ApplicationController
   private
   def set_category
     @category = Category.find(params[:id])
+  end
+
+  def department_params
+    params.require(:department).permit(:id, :parent_id, :name, :description)
   end
 
   def category_params

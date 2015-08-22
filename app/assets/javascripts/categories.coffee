@@ -11,10 +11,14 @@ ready = ->
     closable: false
   }).modal('attach events', '#category_delete', 'show')
   $('.ui.checkbox').checkbox()
+
   $('#category_save_button').click ->
     $('form.category_edit_form').submit()
   $('#category_delete_button').click ->
     $('form.category_delete_form').submit()
+    
+  $('#department_save_button').click ->
+    $('form.dep_create_basic_form').submit()
 
   ###
   parent_id = $('input[name="category[parent_id]"]')
