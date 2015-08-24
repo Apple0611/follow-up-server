@@ -11,7 +11,7 @@
         = link_to edit_department_path(@department), class: 'ui primary small button' do
           %i.save.icon
           保存
-        = link_to edit_department_path(@department), class: 'ui red small button' do
+        #department_delete.ui.red.small.button
           %i.trash.icon
           删除
         = link_to department_path(@department), class: 'ui small button' do
@@ -26,4 +26,5 @@
         = render "department/form_basic"
       .ui.tab{"data-tab" => "doctor"}
         = render "department/form_doctor"
+= render "department/modal_delete"
 = render "layouts/footer"

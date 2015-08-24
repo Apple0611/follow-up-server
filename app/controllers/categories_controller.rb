@@ -60,6 +60,14 @@ class CategoriesController < ApplicationController
     render 'department/edit'
   end
 
+  def dep_destory
+      @department.destroy
+      respond_to do |format|
+        format.html { redirect_to ({action: :index}), flash: {type: 'positive', message: '科室已删除'} }
+        format.json { head :no_content }
+      end
+  end
+
   def select
     id = params[:id].to_i
     if id == 0

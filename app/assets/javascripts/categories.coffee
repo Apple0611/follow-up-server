@@ -7,7 +7,7 @@ ready = ->
   $('.tabular.menu .item').tab()
   $('.ui.dropdown').dropdown()
   $('.ui.edit.modal').modal('attach events', '#category_edit', 'show')
-  $('.ui.delete.modal').modal({
+  $('#category_delete_modal').modal({
     closable: false
   }).modal('attach events', '#category_delete', 'show')
   $('.ui.checkbox').checkbox()
@@ -19,6 +19,9 @@ ready = ->
     
   $('#department_save_button').click ->
     $('form.dep_create_basic_form').submit()
+  $('#department_delete_modal').modal({
+    closable: false
+  }).modal('attach events', '#department_delete', 'show')
 
   ###
   parent_id = $('input[name="category[parent_id]"]')

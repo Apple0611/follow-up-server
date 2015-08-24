@@ -1,0 +1,11 @@
+#department_delete_modal.ui.small.delete.modal
+  .header
+    删除科室
+  .content
+    %p
+      确认删除科室：<b>#{@category.name}</b> ? 注意，此操作不可恢复
+  .actions
+    = link_to @department, method: :dep_destory, class: 'ui red button' do
+      %i.trash.icon
+      删除
+    .ui.deny.button 取消
