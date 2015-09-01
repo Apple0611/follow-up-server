@@ -7,16 +7,16 @@
       .float-left.column
         %h2.ui.header.title 分类：#{@category[:name]}
       .float-right.column
-        .ui.dropdown.labeled.icon.small.button
+        .ui.floating.dropdown.labeled.icon.small.button
           %i.options.icon
           操作
           .menu
-            #category_edit.item 
-              %i.edit.icon &nbsp; 编辑
-            #category_delete.item 
-              %i.trash.icon &nbsp; 删除
+            %a#category_edit.item 
+              %i.edit.icon &nbsp;编辑分类 &nbsp; 
+            %a#category_delete.item 
+              %i.trash.icon &nbsp;删除分类 &nbsp; 
             = link_to({controller: "categories", action: "dep_new", id: @category}, {class: 'item'}) do 
-              %i.plus.icon &nbsp; 添加科室
+              %i.plus.icon &nbsp;添加科室 &nbsp;
         .ui.small.button
           %i.star.icon>
           收藏
