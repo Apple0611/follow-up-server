@@ -4,11 +4,11 @@
   .ui.page.grid
     .sixteen.wide.column
       .float-left.column
-        %h2.ui.header.title 
-          %i.small.edit.icon 
+        %h2.ui.header.title
+          %i.small.edit.icon
           编辑科室：#{@department[:name]}
       .float-right.column
-        = link_to edit_department_path(@department), class: 'ui primary small button' do
+        #department_save.ui.primary.small.button
           %i.save.icon
           保存
         #department_delete.ui.red.small.button
