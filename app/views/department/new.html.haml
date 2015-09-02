@@ -18,9 +18,6 @@
         = @department[:description]
       .ui.tabular.menu
         %a.active.item{"data-tab" => "basic"} 基本资料
-        %a.item{"data-tab" => "doctor"} 医生管理
       .ui.active.tab{"data-tab" => "basic"}
         = render "department/form_basic"
-      .ui.tab{"data-tab" => "doctor"}
-        = render "department/form_doctor"
 = render "layouts/footer"
