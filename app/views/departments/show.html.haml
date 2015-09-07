@@ -6,7 +6,7 @@
       .float-left.column
         %h2.ui.header.title 科室：#{@department[:name]}
       .float-right.column
-        = link_to edit_department_path(@department), class: 'ui small button' do
+        = link_to update_department_path(@department), class: 'ui small button' do
           %i.edit.icon
           编辑
         .ui.small.button
@@ -19,7 +19,7 @@
 .wrap
   .ui.page.grid
     .four.wide.column
-      = render "department/doctor"
+      = render "doctor"
     .twelve.wide.column
-      = render "department/list"
+      = render "list"
 = render "layouts/footer"

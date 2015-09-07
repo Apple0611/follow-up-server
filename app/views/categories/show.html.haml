@@ -12,10 +12,10 @@
           操作
           .menu
             %a#category_edit.item 
-              %i.edit.icon &nbsp;编辑分类 &nbsp; 
+              %i.edit.icon &nbsp;编辑分类 &nbsp;
             %a#category_delete.item 
-              %i.trash.icon &nbsp;删除分类 &nbsp; 
-            = link_to({controller: "categories", action: "dep_new", id: @category}, {class: 'item'}) do 
+              %i.trash.icon &nbsp;删除分类 &nbsp;
+            = link_to({controller: "departments", action: "new", id: @category}, {class: 'item'}) do 
               %i.plus.icon &nbsp;添加科室 &nbsp;
         .ui.small.button
           %i.star.icon>

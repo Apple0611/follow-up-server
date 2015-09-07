@@ -23,8 +23,8 @@
         %a.active.item{"data-tab" => "basic"} 基本资料
         %a.item{"data-tab" => "doctor"} 医生管理
       .ui.active.tab{"data-tab" => "basic"}
-        = render "department/form_basic"
+        = render "form_basic"
       .ui.tab{"data-tab" => "doctor"}
-        = render "department/form_doctor"
-= render "department/modal_delete"
+        = render "form_doctor"
+= render "modal_delete"
 = render "layouts/footer"

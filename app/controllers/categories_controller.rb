@@ -10,62 +10,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id].to_i)
     @page_title = @category.name
-    if @category.type == "Department"
-      @department = @category.becomes(Department)
-      @ancestors = @department.ancestors
-      @diseases = @department.diseases
-      render 'department/show'
-    else
-      @departments = @category.departments
-      @ancestors = @category.ancestors
-      render 'show'
-    end
-  end
-
-  def dep_new
-    @category = Category.find(params[:id].to_i)
-    @page_title = "在分类" + @category.name + "下新建科室"
-
-    @department = Department.new
-    @department.category = @category
-    @department.parent_id = @category.id
+    @departments = @category.departments
     @ancestors = @category.ancestors
-
-    render 'department/new'
-  end
-
-  def dep_create
-    @department = Department.create(department_params)
-    @category = Category.find(@department.parent_id)
-    respond_to do |format|
-      if @department.add_to_child_of @category
-        format.html { redirect_to @department, notice: 'Department was successfully created.' }
-        format.json { render :show, status: :created, location: @department }
-      else
-        format.html { redirect_to action: :index}
-        format.json { render json: @department.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def dep_edit
-    @category = Category.find(params[:id].to_i)
-    @page_title = "编辑：" + @category.name
-
-    @department = @category.becomes(Department)
-    @ancestors = @department.ancestors
-
-    render 'department/edit'
-  end
-
-  def dep_destory
-      @department.destroy
-      respond_to do |format|
-        format.html { redirect_to ({action: :index}), flash: {type: 'positive', message: '科室已删除'} }
-        format.json { head :no_content }
-      end
   end
 
   def select
@@ -120,11 +67,7 @@ class CategoriesController < ApplicationController
 
   private
   def set_category
-    @category = Category.find(params[:id])
-  end
-
-  def department_params
-    params.require(:department).permit(:id, :parent_id, :name, :description)
+    @category = Category.find(params[:id].to_i)
   end
 
   def category_params
