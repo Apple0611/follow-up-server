@@ -8,15 +8,12 @@ Rails.application.routes.draw do
   get 'search', to: 'home#search'
 
   # categories
-  get 'categories/:id/dep_new', to: 'categories#dep_new'
   resources :categories
   # post 'categories/select', to: 'categories#select'
 
   # department
-  get 'departments/:id/edit', to: 'categories#dep_edit'
-  post 'departments/dep_create', to: 'categories#dep_create'
-  get 'departments/:id/dep_destory', to: 'categories#dep_destory'
-  resources :departments, controller: 'categories'
+  get 'departments/new/:id', to: 'departments#new', as: 'new_deparment_path'
+  resources :departments
 
   # diseases
   resources :diseases
