@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # post 'categories/select', to: 'categories#select'
 
   # department
-  get 'departments/new/:id', to: 'departments#new', as: 'new_deparment_path'
+  get 'departments/:id/new', to: 'departments#new', as: 'new_deparment'
   resources :departments
 
   # diseases

@@ -3,8 +3,13 @@ class DepartmentsController < ApplicationController
   before_action :set_department, only: [:show, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
+  def index 
+
+  end
+
   def show
     @page_title = @department.name
+    @category = @department.category
     @ancestors = @department.ancestors
     @diseases = @department.diseases
   end
@@ -12,7 +17,7 @@ class DepartmentsController < ApplicationController
   def new
     @category = Category.find(params[:id].to_i)
     @ancestors = @category.ancestors
-    @page_title = "在分类 " + @category.name + " 下新建科室"
+    @page_title = "在分类" + @category.name + "下新建科室"
 
     @department = Department.new
     @department.category = @category
@@ -33,7 +38,7 @@ class DepartmentsController < ApplicationController
     end
   end
 
-  def update
+  def edit
     @category = Category.find(params[:id].to_i)
     @page_title = "编辑：" + @category.name
 
@@ -41,10 +46,23 @@ class DepartmentsController < ApplicationController
     @ancestors = @department.ancestors
   end
 
-  def destory
+  def update
+    respond_to do |format|
+      if @department.update(department_params)
+        format.html { redirect_to (@department), flash:{type: 'positive', message: '科室已更新'}}
+        format.json { render :show, status: :ok, location: @department }
+      else
+        format.html { redirect_to (@department), flash:{type: 'negative', message: '失败：' + @department.errors.messages.first[1][0]}}
+        format.json { render json: @department.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @categoty = @department.category
     @department.destroy
     respond_to do |format|
-      format.html { redirect_to ({action: :index}), flash: {type: 'positive', message: '科室已删除'} }
+      format.html { redirect_to (@categoty), flash: {type: 'positive', message: '科室已删除'} }
       format.json { head :no_content }
     end
   end
