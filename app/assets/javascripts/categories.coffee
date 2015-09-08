@@ -16,12 +16,6 @@ ready = ->
     $('form.category_edit_form').submit()
   $('#category_delete_button').click ->
     $('form.category_delete_form').submit()
-    
-  $('#department_save_button').click ->
-    $('form.dep_create_basic_form').submit()
-  $('#department_delete_modal').modal({
-    closable: false
-  }).modal('attach events', '#department_delete', 'show')
 
   ###
   parent_id = $('input[name="category[parent_id]"]')
@@ -29,7 +23,6 @@ ready = ->
   loading = $('<i class="spinner loading icon"></i>')
   save = $('#category_save_button')
 
-  
   selects.change ->
     selecter($(this), true)
 

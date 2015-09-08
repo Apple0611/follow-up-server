@@ -2,25 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-// Categories Controller
-body.categories {
+// Departments Controller
+body.departments {
 
-  .small_link {
-    font-size: 13px;
-  }
-  .list_header {
-    font-size: 16px;
-  }
-
-  .category-item {
-    margin-bottom: 10px;
-    .content {
-      font-size: 16px;
-    }
-  }
-  
   // view Action
-  >.show {
+  >.show, >.edit {
 
     .intro-box {
       margin-top: 14px;
@@ -32,5 +18,22 @@ body.categories {
         //text-indent: 2em;
       }
     }
+
+    .department-doctor-box {
+      .item {
+        margin-top: 10px;
+      }
+      .header {
+        font-size: 16px;
+      }
+      .description {
+        font-size: 12px;
+        font-weight: normal;
+        color: gray;
+        margin-top: 6px;
+      }
+    }
+
   }
+  
 }
