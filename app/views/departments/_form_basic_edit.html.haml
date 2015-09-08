@@ -1,0 +1,9 @@
+.ui.large.form.wrap
+  = form_for @department, method: :patch, html: {class: "ui form department_basic_form"} do |f|
+    = f.hidden_field :parent_id, value: @department.parent_id
+    .inline.field
+      = f.label :name, "科室名"
+      = f.text_field :name
+    .field
+      = f.label :description, "描述"
+      = f.text_area :description

@@ -6,7 +6,7 @@
       .float-left.column
         %h2.ui.header.title 
           %i.small.edit.icon 
-          在分类#{@category[:name]}下新建科室
+          在分类 <#{@category[:name]}> 下新建科室
       .float-right.column
         %a.ui.small.button#department_save_button
           %i.save.icon
@@ -19,5 +19,5 @@
       .ui.tabular.menu
         %a.active.item{"data-tab" => "basic"} 基本资料
       .ui.active.tab{"data-tab" => "basic"}
-        = render "form_basic"
+        = render "form_basic_new"
 = render "layouts/footer"

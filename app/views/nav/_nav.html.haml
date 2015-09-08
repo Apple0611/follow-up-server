@@ -2,12 +2,19 @@
   .ui.page.grid
     .sixteen.wide.column
       .ui.large.breadcrumb
-        = link_to "首页", root_path, class: "section"
+        = link_to '首页', root_path, class: 'section'
         %i.right.chevron.icon.divider
-        - if controller.controller_name ==  "categories"
-          - if action_name == "index"
+        - case controller.controller_name
+        - when 'categories'
+          - if action_name == 'index'
             .active.section 全部分类
           - else
-            = render partial: "nav/ancestors", locals: {name: @category.name}
-        - elsif controller.controller_name ==  "diseases"
-          = render partial: "nav/ancestors", locals: {name: @disease.name}
+            = render partial: 'nav/ancestors', locals: {name: @category.name}
+        - when 'departments'
+          - case action_name
+          - when 'new'
+            = render partial: 'nav/ancestors', locals: {name: @category.name}
+          - else
+            = render partial: 'nav/ancestors', locals: {name: @department.name}
+        - when 'diseases'
+          = render partial: 'nav/ancestors', locals: {name: @disease.name}
