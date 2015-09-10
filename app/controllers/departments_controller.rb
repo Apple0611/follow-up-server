@@ -60,6 +60,7 @@ class DepartmentsController < ApplicationController
 
   def destroy
     @categoty = @department.category
+    @department.remove_from_parent
     @department.destroy
     respond_to do |format|
       format.html { redirect_to (@categoty), flash: {type: 'positive', message: '科室已删除'} }

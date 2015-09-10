@@ -22,6 +22,17 @@ class Category < ActiveRecord::Base
     self.save
   end
 
+  def remove_from_parent
+    parent = Category.find(self.parent_id)
+    if parent
+      parent[:children_count] -= 1
+      parent.save
+      return true
+    else
+      return false
+    end
+  end
+
   protected
   before_validation do
     self.name_py = PinYin.of_string(name).join(' ')
