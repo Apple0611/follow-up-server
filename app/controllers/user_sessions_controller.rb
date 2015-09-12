@@ -1,20 +1,16 @@
 class UserSessionsController < ApplicationController
 
+  def new
+    @page_title = "登录"
+    @user = User.new
+  end
+
   def create
-    case request.method
-
-    when "GET"
-      @page_title = "登录"
-      @user = User.new
+    if @user = login(params[:email], params[:password], params[:remember])
+      redirect_back_or_to(:root, notice: '登录成功')
+    else
+      flash.now[:alert] = '邮箱/电话或密码错误！'
       render 'signin'
-
-    when "POST"
-      if @user = login(params[:email], params[:password], params[:remember])
-        redirect_back_or_to(:root, notice: '登录成功')
-      else
-        flash.now[:alert] = '邮箱/电话或密码错误！'
-        render 'signin'
-      end
     end
   end
 
