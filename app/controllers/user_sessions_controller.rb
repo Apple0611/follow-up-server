@@ -9,8 +9,10 @@ class UserSessionsController < ApplicationController
     if @user = login(params[:email], params[:password], params[:remember])
       redirect_back_or_to(:root, notice: '登录成功')
     else
+      @user = User.new
+      @user[:email] = params[:email]
       flash.now[:alert] = '邮箱/电话或密码错误！'
-      render 'signin'
+      render 'new'
     end
   end
 

@@ -30,9 +30,6 @@
       = render "sorter"
     .twelve.wide.column
       = render "list"
-- if @category.id.nil?
-  = render "modal_new"
-- else
-  = render "modal_edit"
-  = render "modal_delete"
+= render "modal_edit"
+= render "modal_delete"
 = render "layouts/footer"

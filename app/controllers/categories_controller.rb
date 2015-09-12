@@ -5,7 +5,28 @@ class CategoriesController < ApplicationController
 
   def index
     @page_title = "全部分类"
-    @roots = Category.roots
+
+    @sorter = [
+      ['默认排序', '/categories', ''],
+      ['拼音A-Z', '/categories/by/pinyin', ''],
+      ['热门程度', '/categories/by/hot', ''],
+      ['科室数量', '/categories/by/count', '']]
+
+    case params[:by_method]
+    when "pinyin"
+      @roots = Category.where('depth = 0').order(:py_abbr)
+      @sorter[1][2] = 'active'
+    when "hot"
+      @roots = Category.where('depth = 0').order(:children_count)
+      @sorter[2][2] = 'active'
+    when "count"
+      @roots = Category.where('depth = 0').order(:children_count)
+      @sorter[3][2] = 'active'
+    else
+      @roots = Category.roots
+      @sorter[0][2] = 'active'
+    end
+
     @category = Category.new
   end
 

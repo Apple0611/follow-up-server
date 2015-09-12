@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   # categories
   resources :categories
+  get 'categories/by/:by_method', to: 'categories#index'
   # post 'categories/select', to: 'categories#select'
 
   # department

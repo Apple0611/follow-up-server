@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body.user_sessions > .create, 
+body.user_sessions > .new, 
 body.users > .create {
 
   .sign-guide {
@@ -50,7 +50,7 @@ body.users > .create {
 
 }
 
-body.user_sessions > .create {
+body.user_sessions > .new {
   
   .qr-area {
     padding: 20px 0 20px 0;

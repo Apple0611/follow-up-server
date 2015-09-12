@@ -6,7 +6,7 @@
         = flash[:alert]
     .field
       .ui.fluid.large.icon.input
-        = text_field_tag :email, "", placeholder: "邮箱或电话号码"
+        = text_field_tag :email, @user[:email], placeholder: "邮箱或电话号码"
         %i.circular.mail.icon
     .field
       .ui.fluid.large.icon.input
