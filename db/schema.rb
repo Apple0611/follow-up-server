@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520070602) do
+ActiveRecord::Schema.define(version: 20150920070524) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",           limit: 255
@@ -48,6 +48,14 @@ ActiveRecord::Schema.define(version: 20150520070602) do
   end
 
   add_index "diseases", ["department_id"], name: "index_diseases_on_department_id", using: :btree
+
+  create_table "identities", force: :cascade do |t|
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
+    t.string   "password_digest", limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
 
   create_table "treatments", force: :cascade do |t|
     t.datetime "created_at",                null: false
