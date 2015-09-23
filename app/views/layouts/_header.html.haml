@@ -21,19 +21,19 @@
               %i.user.icon
               = t('personal')
               .menu
-                .item 
-                  %i.home.icon 
+                .item
+                  %i.home.icon
                   个人主页
                 %a.item{href: "/settings"}
-                  %i.setting.icon 
+                  %i.setting.icon
                   设置
                 %a.item{href: "/signout"}
-                  %i.sign.out.icon 
+                  %i.sign.out.icon
                   退出
           - else
-            %a.item{href: "/signin"}
+            %a.item{href: "/auth/identity/signin"}
               %i.sign.in.icon
               登录
-            %a.item{href: "/signup"}
+            %a.item{href: "/auth/identity/register"}
               %i.add.user.icon
               注册

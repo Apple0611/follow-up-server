@@ -22,13 +22,16 @@ Rails.application.routes.draw do
 
   # users
   resources :users
-  match 'signup', to: 'users#create', via: [:get, :post]
+  # match 'signup', to: 'users#create', via: [:get, :post]
 
-  #user_sessions
-  resources :user_sessions
-  get 'signin', to: 'user_sessions#new'
-  post 'signin', to: 'user_sessions#create'
-  get 'signout', to: 'user_sessions#destroy'
+  get 'auth/identity/register', to: 'identities#new'
+  resources :identities
+
+  # sessions
+  resources :sessions
+  get 'auth/identity/signin', to: 'sessions#new'
+  post 'auth/identity/signin', to: 'sessions#create'
+  get 'auth/identity/signout', to: 'sessions#destroy'
 
   # settings
   get 'settings', to: 'settings#index'
