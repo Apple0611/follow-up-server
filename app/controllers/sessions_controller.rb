@@ -1,4 +1,4 @@
-class UserSessionsController < ApplicationController
+class SessionsController < ApplicationController
 
   def new
     @page_title = "登录"
