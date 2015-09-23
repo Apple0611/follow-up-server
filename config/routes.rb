@@ -21,13 +21,8 @@ Rails.application.routes.draw do
   get 'diseases/:id/page/:page', to: 'diseases#show'
 
   # users
-  resources :users do
-    member do
-      get :activate
-    end
-  end
-  get 'signup', to: 'users#create'
-  post 'signup', to: 'users#create'
+  resources :users
+  match 'signup', to: 'users#create', via: [:get, :post]
 
   #user_sessions
   resources :user_sessions
