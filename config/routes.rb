@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   # sessions
   resources :sessions
   get 'auth/identity/signin', to: 'sessions#new'
-  post 'auth/identity/signin', to: 'sessions#create'
+  post 'auth/identity/callback', to: 'sessions#create'
   get 'auth/identity/signout', to: 'sessions#destroy'
 
   # settings

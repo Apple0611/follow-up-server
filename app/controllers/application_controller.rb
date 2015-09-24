@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   private
   def not_authenticated
-    redirect_to '/signin', alert: "请先登录！"
+    redirect_to 'auth/identity/signin', alert: "请先登录！"
   end
+
 end
