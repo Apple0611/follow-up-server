@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout
+    session[:user_id] = nil;
     redirect_back_or_to(:root, notice: 'Login successful')
   end
 
