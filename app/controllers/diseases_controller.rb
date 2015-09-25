@@ -6,7 +6,7 @@ class DiseasesController < ApplicationController
     @disease = Disease.find(params[:id])
     @page_title = @disease.name
     @department = @disease.department
-    @ancestors = @department.self_and_ancestors
+    @ancestors = @department.ancestors
     @treatments = @disease.treatments.paginate(page: params[:page])
   end
 

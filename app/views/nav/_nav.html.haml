@@ -9,12 +9,26 @@
           - if action_name == 'index'
             .active.section 全部分类
           - else
-            = render partial: 'nav/ancestors', locals: {name: @category.name}
+            = render partial: 'nav/ancestors'
+            %i.right.chevron.icon.divider
+            .active.section
+              = @category.name
         - when 'departments'
           - case action_name
           - when 'new'
-            = render partial: 'nav/ancestors', locals: {name: @category.name}
+            = render partial: 'nav/ancestors'
+            %i.right.chevron.icon.divider
+            .active.section
+              = @category.name
           - else
-            = render partial: 'nav/ancestors', locals: {name: @department.name}
+            = render partial: 'nav/ancestors'
+            %i.right.chevron.icon.divider
+            .active.section
+              = @department.name
         - when 'diseases'
-          = render partial: 'nav/ancestors', locals: {name: @disease.name}
+          = render partial: 'nav/ancestors'
+          %i.right.chevron.icon.divider
+          = link_to @department.name, department_path(@department), class: "section"
+          %i.right.chevron.icon.divider
+          .active.section
+            = @disease.name
