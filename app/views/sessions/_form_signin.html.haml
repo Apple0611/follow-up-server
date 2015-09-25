@@ -1,5 +1,5 @@
 .form-area
-  = form_tag "/signin", method: :post do
+  = form_tag "/auth/identity/signin", method: :post do
     - if flash[:alert]
       .ui.warning.message
         %i.close.icon
