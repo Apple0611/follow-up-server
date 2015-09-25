@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :users
   # match 'signup', to: 'users#create', via: [:get, :post]
 
+  # identities
   get 'auth/identity/register', to: 'identities#new'
   resources :identities
 
