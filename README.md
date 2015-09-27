@@ -22,17 +22,24 @@ cd follow-up-server
 
 ##### 3. Install bundle:
 
-3.1 参考 https://ruby.taobao.org/ 配置 Gem 镜像，或修改 `Gemfile` 第一行的 `source`
+3.1 参考 https://ruby.taobao.org/ 配置 Gem 镜像
 
-3.2 然后
+3.2 安装 bundler
 
 ```bash
-bundle install
+gem install bundler
+```
+
+3.3 然后
+
+```bash
+bundle config mirror.https://rubygems.org https://ruby.taobao.org
+bundle
 ```
 
 ##### 4. Then run the migration:
 
-4.1  ~~安装好 MySql 并启动~~ **(默认配置已改为使用 sqlite3，无需依赖 MySql，直接跳到 4.4 )**
+4.1  ~~安装好 MySql 并启动~~ **(默认配置已改为使用 sqlite3，无需依赖 MySql，直接跳到 4.3 )**
 
 4.2 ~~创建名为 `follow_up_development` 的 database~~
 
