@@ -48,6 +48,7 @@ gem 'hashids', '~> 1.0.2'
 # gem 'capistrano-rails', group: :development
 
 group :production do
+  gem 'unicorn', '~> 4.9.0'
   gem 'unicorn-rails', '~> 2.2.0'
 end
 
