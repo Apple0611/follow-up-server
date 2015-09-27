@@ -16,7 +16,9 @@
 /log/*
 !/log/.keep
 /tmp
-/shared
+*.sock
+*.pid
+*.log
 
 /config/database.yml
 
