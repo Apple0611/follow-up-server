@@ -1,8 +1,9 @@
 defaults: &defaults
   app_name: "四川大学华西医院"
   domain: "127.0.0.1:3000"
-  admin_emails:
-    - "admin@admin.com"
+  admin_emails: "admin@admin.com"
+  hashid_token: "MVwtM6d6vxxP30BdgJw6cipJUGmNJP2adTi+4g13CqI="
+  hashid_length: 8
 
 development:
   <<: *defaults
