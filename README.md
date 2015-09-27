@@ -34,7 +34,8 @@ gem install bundler
 
 ```bash
 bundle config mirror.https://rubygems.org https://ruby.taobao.org
-bundle
+
+bundle install --without production
 ```
 
 ##### 4. Then run the migration:
