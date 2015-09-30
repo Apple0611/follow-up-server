@@ -12,10 +12,11 @@ Rails.application.routes.draw do
     extend self
 
     def matches?( request )
+      debug
       request.query_parameters["state"].blank?
     end
   end
-  
+
   # root
   root 'home#index'
 
