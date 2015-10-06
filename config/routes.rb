@@ -1,22 +1,5 @@
 Rails.application.routes.draw do
 
-  module NewUserConstraint
-    extend self
-
-    def matches?( request )
-      request.query_parameters["state"].present?
-    end
-  end
-
-  module NewSessionConstraint
-    extend self
-
-    def matches?( request )
-      debug
-      request.query_parameters["state"].blank?
-    end
-  end
-
   # root
   root 'home#index'
 
@@ -38,7 +21,7 @@ Rails.application.routes.draw do
   get 'diseases/:id/page/:page', to: 'diseases#show'
 
   # users
-  post "/auth/:provider/callback", to: "users#new", constraints:  NewUserConstraint
+  post "/auth/:provider/callback", to: "users#new", constraints: lambda{|request|request.query_parameters["state"].present?}
   resources :users
 
   # identities
@@ -50,7 +33,7 @@ Rails.application.routes.draw do
   get 'auth/identity/signin', to: 'sessions#new'
   post 'auth/identity/signin', to: 'sessions#create'
 
-  post "/auth/:provider/callback", to: "sessions#new", constraints: NewSessionConstraint
+  post "/auth/:provider/callback", to: "sessions#new", constraints: lambda{|request|request.query_parameters["state"].blank?}
 
   get 'auth/identity/signout', to: 'sessions#destroy'
 
