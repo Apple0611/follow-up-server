@@ -19,6 +19,7 @@
 *.pid
 *.log
 
+/config/config.yml
 /config/database.yml
 
 .DS_Store
