@@ -27,13 +27,13 @@
                 %a.item{href: "/settings"}
                   %i.setting.icon
                   设置
-                = link_to destroy_user_session_path, class: 'item' do
+                = link_to signout_path, class: 'item' do
                   %i.sign.out.icon
                   退出
           - else
-            = link_to new_user_session_path, class: 'item' do
+            = link_to signin_path, class: 'item' do
               %i.sign.in.icon
               登录
-            = link_to user_registration_path, class: 'item' do
+            = link_to signup_path, class: 'item' do
               %i.add.user.icon
               注册

@@ -20,15 +20,16 @@ Rails.application.routes.draw do
   get 'diseases/:id/page/:page', to: 'diseases#show'
 
   # users
-  devise_for :users, path: 'auth', path_names: {
-    sign_in: 'signin',
-    sign_out: 'signout',
-    registration: 'signup',
-  }, controllers: {
+  devise_for :users, controllers: {
     registrations: :registrations,
     passwords: :passwords,
     sessions: :sessions
   }
+  devise_scope :user do
+    get '/signin', to: 'sessions#new'
+    get '/signout', to: 'sessions#destroy'
+    get '/signup', to: 'registrations#new'
+  end
 
   # settings
   get 'settings', to: 'settings#index'
