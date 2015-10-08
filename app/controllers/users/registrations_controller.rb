@@ -9,11 +9,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  def create
-    respond_to do |format|
-      format.html { redirect_to (signup_path), alert: '注册失败' }
-    end
-  end
+  # def create
+  #   respond_to do |format|
+  #     format.html { redirect_to (signup_path), alert: '注册失败' }
+  #   end
+  # end
 
   # GET /resource/edit
   # def edit
