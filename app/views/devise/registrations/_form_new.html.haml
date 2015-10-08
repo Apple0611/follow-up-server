@@ -1,10 +1,9 @@
 .form-area
-  = form_tag "signup" do |f|
-    - if @identity && @identity.errors.any?
+  = form_tag "signup", method: :post do
+    - if flash[:alert]
       .ui.warning.message
         %i.close.icon
-        注册失败！
-        = @identity.errors.messages.first[1][0]
+        = flash[:alert]
     .required.field
       .ui.fluid.large.icon.input
         = text_field_tag :email, @identity.try(:email), {placeholder:"邮箱或电话号码"}

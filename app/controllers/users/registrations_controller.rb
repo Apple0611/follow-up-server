@@ -10,7 +10,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    redirect_to('/signup', notice: '注册失败')
+    respond_to do |format|
+      format.html { redirect_to (signup_path), alert: '注册失败' }
+    end
   end
 
   # GET /resource/edit
