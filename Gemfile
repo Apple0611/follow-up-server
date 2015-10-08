@@ -61,6 +61,7 @@ group :development, :test do
   gem 'autotest-rails', '~> 4.2.1'
   gem 'database_cleaner', '~> 1.4.1'
   gem 'better_errors', '~> 2.1.1'
+  gem 'binding_of_caller', '~> 0.7.2'
   gem 'meta_request', '~> 0.3.4'
   gem 'quiet_assets', '~> 1.1.0'
 end
