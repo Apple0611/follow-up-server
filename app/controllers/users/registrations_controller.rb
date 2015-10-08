@@ -3,14 +3,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @page_title = "注册"
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    redirect_to('/signup', notice: '注册失败')
+  end
 
   # GET /resource/edit
   # def edit

@@ -21,14 +21,16 @@ Rails.application.routes.draw do
 
   # users
   devise_for :users, controllers: {
-    registrations: :registrations,
-    passwords: :passwords,
-    sessions: :sessions
+    registrations: 'users/registrations',
+    passwords: 'users/passwords',
+    sessions: 'users/sessions',
   }
   devise_scope :user do
-    get '/signin', to: 'sessions#new'
-    get '/signout', to: 'sessions#destroy'
-    get '/signup', to: 'registrations#new'
+    get '/signin', to: 'users/sessions#new'
+    post '/signin', to: 'users/sessions#create'
+    get '/signout', to: 'users/sessions#destroy'
+    get '/signup', to: 'users/registrations#new'
+    post '/signup', to: 'users/registrations#create'
   end
 
   # settings
