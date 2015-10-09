@@ -1,16 +1,13 @@
 .form-area
-  = form_tag "signin", method: :post do
-    - if flash[:alert]
-      .ui.warning.message
-        %i.close.icon
-        = flash[:alert]
-    .field
+  = form_for resource, as: resource_name, url: signin_path do |f|
+    = render "layouts/message_content"
+    .required.field
       .ui.fluid.large.icon.input
-        = text_field_tag :email, @user[:email], placeholder: "邮箱或电话号码"
+        = f.text_field :login, placeholder: "邮箱或手机号"
         %i.circular.mail.icon
-    .field
+    .required.field
       .ui.fluid.large.icon.input
-        = password_field_tag :password, "", placeholder: "密码"
+        = f.password_field :password,  placeholder: "密码"
         %i.circular.lock.icon
     .two.fields
       .inline.field
@@ -20,4 +17,4 @@
       .inline.field
         %a.float-right{href: "signup"}
           忘记密码
-    = submit_tag "登录", class: "ui large fluid primary submit button"
+    = f.submit "登录", class: "ui large fluid primary submit button"
