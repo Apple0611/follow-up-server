@@ -1,0 +1,13 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            login:
+              invalid: "邮箱或手机号格式错误"
+              mobile_exists: "此手机号已注册过"
+              email_exists: "此邮箱已注册过"
+            password:
+              too_short: "密码太短（不少于6位）"
+              too_long: "密码太长（不超过20位）"

@@ -1,0 +1,8 @@
+en:
+  layouts:
+    header:
+      home_link: "Home"
+      search_link: "Search"
+      message_link: "Message"
+      personal_link: "Personal"
+      logout_link: "Logout"

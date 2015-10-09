@@ -1,0 +1,13 @@
+zh-CN:
+  layouts:
+    header:
+      home_link: "首页"
+      search_link: "搜索"
+      message_link: "消息"
+      personal_link: "个人"
+      logout_link: "退出"
+      search_disease: "查询疾病"
+      create_treatment: "创建治疗方案"
+      create_follow-up: "创建随访"
+      statistics: "查看统计"
+      search_in_database: "在数据库中搜索疾病名称、症状、诊断、治疗等关键词"

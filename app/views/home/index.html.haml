@@ -9,7 +9,7 @@
               = image_tag "img/" + card[:image]
             .content
               .header
-                = t(card[:title])
+                = t card[:title]
 .search-box.wrap
   .ui.page.grid
     .sixteen.wide.column
@@ -17,9 +17,9 @@
         %h3.ui.header.search-title
           %i.search.icon
           .content
-            = t('search_in_database')
+            = t '.search_in_database'
         .ui.fluid.icon.input
-          %input{type: "text", placeholder: t('search')+"..."}
+          %input{type: "text", placeholder: t('.search_link')+"..."}
           %i.search.icon
 .news-box.wrap
   .ui.page.grid
@@ -67,8 +67,8 @@
             %a.item
               %i{class: c[:icon] + " icon"}
               .content
-                .header 
+                .header
                   = c[:header]
-                .description 
+                .description
                   = c[:desc]
 = render "layouts/footer"

@@ -18,15 +18,4 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  home: "Home"
-  search: "Search"
-  message: "Message"
-  personal: "Personal"
-  logout: "Logout"
-  search_disease: "Search Disease"
-  create_treatment: "Create Treatment"
-  create_follow-up: "Create Follow-Up"
-  statistics: "Statistics"
-  search_in_database: "Search keywords of disease, symptom, diagnosis and treatment in the database."
