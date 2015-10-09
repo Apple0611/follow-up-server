@@ -1,0 +1,12 @@
+- if flash[:error]
+  .ui.negative.message
+    %i.close.icon
+    = flash[:error]
+- if flash[:notice]
+  .ui.info.message
+    %i.close.icon
+    = flash[:notice]
+- if flash[:alert]
+  .ui.warning.message
+    %i.close.icon
+    = flash[:alert]

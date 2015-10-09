@@ -1,0 +1,5 @@
+- if flash[:error] || flash[:notice] || flash[:alert]
+  .message-box
+    .ui.page.grid
+      .sixteen.wide.column
+        = render 'message_content'
