@@ -4,22 +4,22 @@
       .ui.secondary.menu
         %a.active.item{href: "/"}
           %i.home.icon
-          = t('home')
+          = t '.home_link'
         - unless defined? hide_search
           .item
             .ui.icon.input
-              %input{placeholder: t('search'), type: "text"}
+              %input{placeholder: t('.search_link'), type: "text"}
               %i.search.link.icon
         .right.menu
           - if session[:user_id]
             %a.item
               %i.mail.icon
-              = t('message')
+              = t '.message_link'
               .floating.ui.teal.circular.label
                 5
             .ui.floating.top.right.pointing.dropdown.link.item
               %i.user.icon
-              = t('personal')
+              = t '.personal_link'
               .menu
                 .item
                   %i.home.icon
