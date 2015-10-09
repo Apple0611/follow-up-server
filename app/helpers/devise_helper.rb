@@ -13,6 +13,7 @@ module DeviseHelper
 
     html = <<-HTML
     <div class="ui warning message">
+      <i class="close icon"></i>
       #{sentence}: #{message}
     </div>
     HTML
