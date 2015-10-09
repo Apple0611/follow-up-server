@@ -1,0 +1,23 @@
+.form-area
+  = form_tag "signin", method: :post do
+    - if flash[:alert]
+      .ui.warning.message
+        %i.close.icon
+        = flash[:alert]
+    .field
+      .ui.fluid.large.icon.input
+        = text_field_tag :email, @user[:email], placeholder: "邮箱或电话号码"
+        %i.circular.mail.icon
+    .field
+      .ui.fluid.large.icon.input
+        = password_field_tag :password, "", placeholder: "密码"
+        %i.circular.lock.icon
+    .two.fields
+      .inline.field
+        .ui.checkbox
+          = check_box_tag :remember, "true", checked: "checked"
+          %label 保持登录状态
+      .inline.field
+        %a.float-right{href: "signup"}
+          忘记密码
+    = submit_tag "登录", class: "ui large fluid primary submit button"

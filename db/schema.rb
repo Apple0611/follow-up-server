@@ -11,79 +11,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924104722) do
+ActiveRecord::Schema.define(version: 20151008094317) do
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",           limit: 255
-    t.text     "description",    limit: 65535
-    t.string   "name_py",        limit: 255
-    t.string   "py_abbr",        limit: 255
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "parent_id",      limit: 4
-    t.integer  "depth",          limit: 4
-    t.integer  "lft",            limit: 4
-    t.integer  "rgt",            limit: 4
-    t.integer  "children_count", limit: 4
-    t.string   "type",           limit: 255
-    t.integer  "category_id",    limit: 4
+    t.string   "name"
+    t.text     "description"
+    t.string   "name_py"
+    t.string   "py_abbr"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "parent_id"
+    t.integer  "depth"
+    t.integer  "lft"
+    t.integer  "rgt"
+    t.integer  "children_count"
+    t.string   "type"
+    t.integer  "category_id"
   end
 
-  add_index "categories", ["category_id"], name: "index_categories_on_category_id", using: :btree
+  add_index "categories", ["category_id"], name: "index_categories_on_category_id"
 
   create_table "diseases", force: :cascade do |t|
-    t.string   "name",          limit: 255
-    t.text     "summary",       limit: 65535
-    t.text     "overview",      limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.string   "name_en",       limit: 255
-    t.string   "en_abbr",       limit: 255
-    t.string   "name_py",       limit: 255
-    t.string   "py_abbr",       limit: 255
-    t.text     "image",         limit: 65535
-    t.string   "alt_name",      limit: 255
-    t.string   "cause",         limit: 255
-    t.integer  "department_id", limit: 4
+    t.string   "name"
+    t.text     "summary"
+    t.text     "overview"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "name_en"
+    t.string   "en_abbr"
+    t.string   "name_py"
+    t.string   "py_abbr"
+    t.text     "image"
+    t.string   "alt_name"
+    t.string   "cause"
+    t.integer  "department_id"
   end
 
-  add_index "diseases", ["department_id"], name: "index_diseases_on_department_id", using: :btree
-
-  create_table "identities", force: :cascade do |t|
-    t.string   "name",            limit: 255
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-  end
-
-  create_table "treatments", force: :cascade do |t|
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "disease_id",  limit: 4
-    t.integer  "user_id",     limit: 4
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
-  end
-
-  add_index "treatments", ["disease_id"], name: "index_treatments_on_disease_id", using: :btree
-  add_index "treatments", ["user_id"], name: "index_treatments_on_user_id", using: :btree
+  add_index "diseases", ["department_id"], name: "index_diseases_on_department_id"
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "department_id", limit: 4
-    t.string   "type",          limit: 255
-    t.integer  "treatment_id",  limit: 4
-    t.integer  "docotr_id",     limit: 4
-    t.string   "role",          limit: 255
-    t.string   "name",          limit: 255
-    t.string   "title",         limit: 255
-    t.string   "phone",         limit: 255
+    t.string   "name",                   limit: 48,  default: ""
+    t.string   "mobile",                 limit: 16,  default: ""
+    t.string   "email",                  limit: 128, default: ""
+    t.string   "encrypted_password",     limit: 128, default: "", null: false
+    t.string   "password_salt",          limit: 128, default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
   end
-
-  add_index "users", ["department_id"], name: "index_users_on_department_id", using: :btree
-  add_index "users", ["docotr_id"], name: "index_users_on_docotr_id", using: :btree
-  add_index "users", ["treatment_id"], name: "index_users_on_treatment_id", using: :btree
 
 end

@@ -1,0 +1,32 @@
+= render "layouts/header"
+.sign-box.wrap
+  .ui.page.grid
+    .eight.wide.centered.column
+      .ui.warning.form.segment
+        .ui.center.aligned.page.grid
+          .row
+            .ui.buttons
+              .ui.primary.button 登录
+              .or
+              %a{href: "/signup"}
+                .ui.button 注册
+        .ui.fluid.two.item.secondary.pointing.menu
+          %a.item{"data-tab" => "first"}
+            %span.sign-guide 快速登录
+          %a.active.item{"data-tab" => "second"}
+            %span.sign-guide 账号密码登录
+        .ui.tab{"data-tab" => "first"}
+          = render "qr_new"
+        .ui.active.tab{"data-tab" => "second"}
+          = render "form_new"
+        .ui.horizontal.divider
+          %span.sign-guide 或通过以下方式直接登录
+        .ui.center.aligned.page.grid
+          .media-login.row
+            .ui.large.circular.wechat.icon.button
+              %i.wechat.icon
+            .ui.large.circular.qq.icon.button
+              %i.qq.icon
+            .ui.large.circular.weibo.icon.button
+              %i.weibo.icon
+= render "layouts/footer"

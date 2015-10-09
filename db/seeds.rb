@@ -5,9 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#   
+#
 #   rake db:drop db:create db:migrate db:seed
-#   
+#
 
 ActiveRecord::Base.transaction do
 
@@ -34,10 +34,6 @@ ActiveRecord::Base.transaction do
   ga = Department.create(name: "泌尿外科")
   ga.add_to_child_of(g)
   gaa = Disease.create(name: "泌尿外科", department: ga)
-
-  20.times do |i|
-    Treatment.create(name: "泌尿外科治疗方案#{i}", description: "泌尿外科治疗方案详细描述#{i}", disease: gaa)
-  end
 
   Disease.create(name: "肾移植", department: ga)
   Disease.create(name: "泌尿肾移植", department: ga)

@@ -1,0 +1,24 @@
+= render "layouts/header"
+.sign-box.wrap
+  .ui.page.grid
+    .eight.wide.centered.column
+      .ui.warning.form.segment
+        .ui.center.aligned.page.grid
+          .row
+            .ui.buttons
+              %a{href: "/signin"}
+                .ui.button 登录
+              .or
+              .ui.positive.button 注册
+        = render "form_new"
+        .ui.horizontal.divider
+          %span.sign-guide 或通过以下方式直接登录
+        .ui.center.aligned.page.grid
+          .media-login.row
+            .ui.large.circular.wechat.icon.button
+              %i.wechat.icon
+            .ui.large.circular.qq.icon.button
+              %i.qq.icon
+            .ui.large.circular.weibo.icon.button
+              %i.weibo.icon
+= render "layouts/footer"

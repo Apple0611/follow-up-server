@@ -1,0 +1,10 @@
+zh-CN:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: "邮箱不能为空"
+            password:
+              too_short: "密码太短（至少）"
