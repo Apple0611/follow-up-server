@@ -1,6 +1,6 @@
 class SettingsController < ApplicationController
 
-  before_action :require_login
+  before_action :authenticate_user!
 
   def index
     @page_title = "设置"
@@ -8,6 +8,6 @@ class SettingsController < ApplicationController
   end
 
   def update
-    
+
   end
 end
