@@ -35,7 +35,4 @@ Rails.application.routes.draw do
 
   # settings
   get 'settings', to: 'settings#index'
-
-  # treatments
-  resources :treatments
 end

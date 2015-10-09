@@ -49,24 +49,6 @@ ActiveRecord::Schema.define(version: 20151008094317) do
 
   add_index "diseases", ["department_id"], name: "index_diseases_on_department_id"
 
-  create_table "identities", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
-  create_table "treatments", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "disease_id"
-    t.string   "name"
-    t.text     "description"
-  end
-
-  add_index "treatments", ["disease_id"], name: "index_treatments_on_disease_id"
-
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 48,  default: ""
     t.string   "mobile",                 limit: 16,  default: ""
