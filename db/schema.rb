@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20151008094317) do
     t.string   "mobile",                 limit: 16,  default: ""
     t.string   "email",                  limit: 128, default: ""
     t.string   "encrypted_password",     limit: 128, default: "", null: false
-    t.string   "password_salt",          limit: 128, default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
