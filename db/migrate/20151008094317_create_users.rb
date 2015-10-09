@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration
       ## Database authenticatable
       t.string :email,                  unique: true, default: '', limit: 128
       t.string :encrypted_password,      null: false, default: '', limit: 128
-      t.string :password_salt,           null: false, default: '', limit: 128
 
       ## Recoverable
       t.string   :reset_password_token

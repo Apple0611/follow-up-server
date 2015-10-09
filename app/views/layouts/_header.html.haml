@@ -11,7 +11,7 @@
               %input{placeholder: t('.search_link'), type: "text"}
               %i.search.link.icon
         .right.menu
-          - if session[:user_id]
+          - if user_signed_in?
             %a.item
               %i.mail.icon
               = t '.message_link'

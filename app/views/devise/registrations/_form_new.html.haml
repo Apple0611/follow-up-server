@@ -1,13 +1,13 @@
 .form-area
-  = form_for resource, as: resource_name, url: registration_path(resource_name) do |f|
+  = form_for resource, as: resource_name, url: signup_path do |f|
     = devise_error_messages!
     .required.field
       .ui.fluid.large.icon.input
-        = f.text_field :login, placeholder: "邮箱或电话号码", required: true
+        = f.text_field :login, placeholder: "邮箱或手机号"
         %i.circular.mail.icon
     .required.field
       .ui.fluid.large.icon.input
-        = f.password_field :password,  placeholder: "密码", required: true
+        = f.password_field :password,  placeholder: "密码"
         %i.circular.lock.icon
     .inline.required.field
       .ui.checkbox
